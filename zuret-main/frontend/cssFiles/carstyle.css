@@ -1,0 +1,127 @@
+
+  
+  .buttons button {
+    background-color: transparent;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+  }  
+  .buttons button a {
+    text-decoration: none;
+    color: black;
+    font-size: 10px; 
+  }   
+.search-bar {
+text-align: center;
+margin-top: 20px;
+display: flex;
+justify-content: center; 
+padding: 20px;
+border-radius: 40%;
+
+
+
+}
+
+.search-bar input {
+padding: 10px;
+border: none;
+background-color: #ffffff;
+width: 100%;
+max-width: 500px; 
+border: 1px solid #ccc;
+border-radius: 20px 20px 20px 20px;   
+font-size: 18px;  
+
+}
+
+.search-bar button {
+background-color: transparent;
+border: none;
+margin-left: -40px;
+cursor: pointer;
+font-size: 20px;
+color: rgb(98, 95, 95);
+}
+
+.card-container { 
+display: flex; 
+flex-wrap: wrap; 
+justify-content: space-around;
+margin: 0% 5% 5% 5%;
+}
+
+.card { 
+background: white; 
+margin: 10px; 
+padding: 15px; 
+width: calc(50% - 20px); 
+box-sizing: border-box; 
+height: fit-content;
+
+
+
+}
+.card h2{
+    font-size: 20px;
+    color: rgb(46, 44, 44);
+}
+.card img { 
+width: 80%;
+margin-left: 10%;
+height: 100px;
+
+}
+.card .location { 
+margin-bottom: 10%;
+font-size: 15px;
+margin-top: -3%;
+}
+.card .location i { 
+margin-right: 5px; 
+color: rgb(190, 6, 6);
+}
+.card .details { 
+background: rgb(227, 118, 35); 
+color: #ffffff;
+display: flex; 
+justify-content: space-between;
+padding: 3px;
+font-size: 13px;
+border-radius: 5px 5px 5px 5px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+.card .details a{
+    text-decoration: none;
+    color: #ffffff;
+    margin-right: 15px;
+}
+.card .reviews { 
+background:rgb(253, 247, 223); 
+padding: 5px;
+border-radius: 5px 5px 5px 5px;
+}
+.card .reviews .review { 
+display: flex; 
+align-items: center; }
+.card .reviews .review i { 
+margin-right: 5px;
+}
+.card .more-link { 
+text-align: right; 
+padding: 5px;
+}
+.card .more-link a{
+    text-decoration: none; 
+    color: black;
+}
+
+
+.card.hide {
+display: none;
+}
+.card.full-width {
+  width: calc(50%);
+ 
+}
