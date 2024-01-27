@@ -171,6 +171,8 @@ body{
 /* Landing Page */
 .home-container{
   height: 100vh;
+  display: flex;
+  align-items: center;
 }
 .landing_img{
   position: absolute;
@@ -186,9 +188,10 @@ body{
   top:10rem;
 }
 .landing_container{
-  display: flex;
+ 
   margin-left: 5em;
   margin-right: 5em;
+ 
 }
 .title{
   align-self: center;
@@ -422,7 +425,7 @@ text-align: center;
 
 
 /* hotels */
-
+/* 
 #hotels-body {
   height: 100vh;
   width: 100vw;
@@ -489,10 +492,10 @@ footer{
   column-gap: 20px;
   flex-wrap: wrap;
   padding-left: auto;
-}
+} */
 
-
-.restaurant-container {
+/* restaurants */
+/* .restaurant-container {
   flex-grow: 1fr;
   width: 100%;
   display: flex;
@@ -667,7 +670,7 @@ footer{
 .rate > label:hover ~ input:checked ~ label {
   color: #c59b08;
 }
-
+ */
 
 
 
@@ -682,7 +685,7 @@ footer{
 
 
 
-
+/* ......................... */
 
 .zuret{
   margin: 30px 0 30px 60px;
@@ -923,135 +926,3 @@ footer h4{
 
 
 
-
- /* Discover */
- :root {
-  --base-font-size: 16px; 
-}
-
-.main {
-  margin: 0.625rem 4.375rem;
-}
-
-.searching-container {
-  background-color: rgb(252, 249, 249);
-  width: 40%; 
-  height: 3.75rem; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 0.25rem; 
-  padding-right: 0.25rem; 
-  border-radius: 1.25rem; 
-  margin: auto;
-  margin-top: 2rem; 
-}
-
-#searching-input {
-  padding: 0.063rem 0.313rem; 
-  height: 80%;
-  width: 100%;
-  border: none;
-  border-radius: 1.25rem; 
-  font-size: 0.813rem;
-}
-
-#searching-button {
-  border-radius: 100%;
-  border: none;
-  background-color: white;
-}
-
-.content-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.dist-images {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  justify-content: center;
-}
-
-.elem-1,
-.elem-2 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.25rem;
-}
-
-.img-container {
-  width: 15.625rem; 
-  height: 12.5rem; 
-  position: relative;
-  margin: 0.625rem;
-}
-
-.img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0.5rem; 
-}
-
-.img-title {
-  border-radius: 0.313rem; 
-  background-color: rgb(86, 83, 83);
-  opacity: 0.7;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0rem 0.625rem;
-  color: white;
-}
-
-.elem-2 {
-  display: none;
-}
-
-.view button {
-  border: none;
-  background-color: #fef7e0;
-  font-size: 1.1rem;
-  margin-top: 0.625rem;
-  
-}
-.view span {
-  margin-top: 10px;
-}
-.dist p {
-  font-size: 1.1rem;
-}
-
-.content-nav {
-  margin-top: 2.5rem;
-  
-}
-
-@media screen and (max-width: 61.125rem) {
-  .searching-container {
-    height: 3.125rem;
-    width: 50%;
-  }
-
-  #searching-input {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 46.6875rem) {
-  .searching-container {
-    height: 2.8125rem;
-    width: 80%;
-  }
-
-  #searching-input {
-    font-size: 1rem;
-  }
-}

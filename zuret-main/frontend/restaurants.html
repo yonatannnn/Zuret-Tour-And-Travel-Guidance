@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="cssFiles/styles.css">
+    <link rel="stylesheet" href="cssFiles/restaurants.css">
 </head>
 <body id="hotels-body">
     <header>
@@ -58,11 +59,15 @@
         </nav>
     </header>
     <main id="hotels-page-main">
-        <div class="search-container">
+        <!-- <div class="search-container">
             <input type="text" id="search-input" placeholder="Restaurant name ...">
             <button id="search-button">
                 <img src="images/magnifying-glass-solid.svg" alt="Search">
             </button>
+        </div> -->
+        <div class="search-bar">
+            <input type="text" placeholder="Restaurant name ...">
+            <button type="submit"><i class="fa fa-search"></i></button>  
         </div>
         <div class="restaurant-container">
             <div class="restaurant-card">
@@ -208,5 +213,28 @@
         </div> 
         <p class="footer-p"> &#9400;Copyright | JAN 2024 G.C | Published By Zurets </p>
        </footer>
+       <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const searchBar = document.querySelector(".search-bar input");
+          const cards = document.querySelectorAll(".restaurant-name");
+          const mainCard=document.querySelectorAll(".restaurant-card")
+      
+          searchBar.addEventListener("input", function () {
+            const searchTerm = searchBar.value.toLowerCase();
+      
+            cards.forEach((card) => {
+              const cardTitle = card.querySelector("h2").innerText.toLowerCase();
+      
+              if (cardTitle.includes(searchTerm)) {
+                mainCard.classList.remove("hide");
+                mainCard.classList.add("full-width", "expanded");
+              } else {
+                mainCard.classList.add("hide");
+                mainCard.classList.remove("full-width", "expanded");
+              }
+            });
+          });
+        })
+ </script>
        <script src="javascript/user-feature/js.js"></script></body>
 </html>

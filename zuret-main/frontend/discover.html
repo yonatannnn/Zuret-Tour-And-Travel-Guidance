@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zuret</title>
     <link rel="stylesheet" href="cssFiles/styles.css">
+    <link rel="stylesheet" href="cssFiles/discover.css">
+
     
     <style>
         #discover-anchor{
@@ -68,11 +70,15 @@
         </nav>
     </header>
     <main class="main">
-        <div class="searching-container">
+        <!-- <div class="searching-container">
             <input type="text" id="searching-input" placeholder="Discover sites, Hotels, Restaurants ...">
             <button id="searching-button">
                 <img src="images/magnifying-glass-solid.svg" alt="Search">
             </button>
+        </div> -->
+        <div class="search-bar">
+            <input type="text" placeholder="Discover sites, Hotels, Restaurants ..." />
+            <button type="submit"><i class="fa fa-search"></i></button>  
         </div>
     <div class="main-content">
         <div class="content-nav">
@@ -293,6 +299,30 @@
         </div> 
         <p class="footer-p"> &#9400;Copyright | JAN 2024 G.C | Published By Zurets </p>
        </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const searchBar = document.querySelector(".search-bar input");
+          const cards = document.querySelectorAll(".img-container");
+      
+          searchBar.addEventListener("input", function () {
+            const searchTerm = searchBar.value.toLowerCase();
+      
+            cards.forEach((card) => {
+              const cardTitle = card.querySelector("p").innerText.toLowerCase();
+      
+              if (cardTitle.includes(searchTerm)) {
+                card.classList.remove("hide");
+                card.classList.add("full-width", "expanded");
+              } else {
+                card.classList.add("hide");
+                card.classList.remove("full-width", "expanded");
+              }
+            });
+          });
+        })
+ </script>
 <script src="javascript/user-feature/js.js"></script>
 </body>
 </html>

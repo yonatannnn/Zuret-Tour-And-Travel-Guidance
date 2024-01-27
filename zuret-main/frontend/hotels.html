@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="cssFiles/styles.css">
+    <link rel="stylesheet" href="cssFiles/hotels.css">
 </head>
 <body>
     <header>
@@ -59,12 +60,15 @@
     </header>
     <main id="hotels-page-main">
 
-        <div class="search-container">
+        <!-- <div class="search-container">
             <input type="text" id="search-input" placeholder="Hotel name...">
             <button id="search-button">
                 <img src="images/magnifying-glass-solid.svg" alt="Search">
             </button>
-        </div>
+        </div> -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search for a hotel..." />
+            <button type="submit"><i class="fa fa-search"></i></button>  </div>
         <div class="hotels-container">
             <div class="hotel-card">
                 <div class="hotel-image-container">
@@ -304,6 +308,28 @@
         </div> 
         <p class="footer-p"> &#9400;Copyright | JAN 2024 G.C | Published By Zurets </p>
        </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const searchBar = document.querySelector(".search-bar input");
+          const cards = document.querySelectorAll(".hotel-name");
+      
+          searchBar.addEventListener("input", function () {
+            const searchTerm = searchBar.value.toLowerCase();
+      
+            cards.forEach((card) => {
+              const cardTitle = card.querySelector("h2").innerText.toLowerCase();
+      
+              if (cardTitle.includes(searchTerm)) {
+                card.classList.remove("hide");
+                card.classList.add("full-width", "expanded");
+              } else {
+                card.classList.add("hide");
+                card.classList.remove("full-width", "expanded");
+              }
+            });
+          });
+        })
+ </script>
     <script src="javascript/user-feature/js.js"></script>
 </body>
 </html>
