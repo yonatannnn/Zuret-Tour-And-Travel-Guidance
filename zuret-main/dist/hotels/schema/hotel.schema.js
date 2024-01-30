@@ -6,25 +6,19 @@ exports.HotelSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'A hotel must have a name'],
-        unique: true,
-        trim: true
     },
     picturePath: String,
-    price: {
-        type: Number,
-        required: [true, 'A hotel must have a price']
-    },
     location: {
         type: String,
         required: [true, 'A hotel must have a location']
     },
-    tourismSite: {
-        type: String,
-        required: [true, 'A hotel must have a site']
-    },
-    rating: {
+    starStat: {
         type: Number,
-        required: [true, 'A hotel must have a rating']
+        required: [true, 'A hotel must have a starStatus']
+    },
+    roomPrice: {
+        type: Number,
+        required: [true, 'A hotel must have an average price']
     }
 });
 //# sourceMappingURL=hotel.schema.js.map

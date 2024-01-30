@@ -68,122 +68,17 @@
             </div>  
         </nav>
     </header>
+    
     <div class="search-bar">
-        <input type="text" placeholder="Enter a Car Rental Company..." />
-        <button type="submit"><i class="fa fa-search"></i></button>  </div>
-      <div class="card-container">
-  <div class="card-container">
-    <div class="card">
-      <img src="images/car1.jpg" alt="Car">
-      <h2>Polo Car Rental</h2>
-      <div class="location">
-        <i class="fa fa-map-marker"></i>
-        <span>4kilo,Addis Ababa</span>
-      </div>
-      <div class="details">
-        <span>Average price:</span>11,653 ETB
-      </div>
-      <div class="details">
-        <span>Available Cars:</span>
-        <a href="polo-view-list.html">View List</a>
-      </div>
-      <h3>Reviews</h3>
-      <div class="reviews">
-        <!-- Repeat for each review -->
-        <div class="review">
-          <i class="fa fa-user"></i>
-          <p>"Great service!"</p>
-        </div>
-       
-        <!-- ... -->
-      </div>
-      <div class="more-link">
-        <a href="#">More... ></a>
-      </div>
+      <input type="text" id='searchInput' placeholder="Enter a Car Rental Company..." />
+      <button type="submit"><i class="fa fa-search"></i></button>
     </div>
-    <div class="card">
-        <img src="images/car2.jpg" alt="Car">
-        <h2>Drift Car Rental</h2>
-        <div class="location">
-          <i class="fa fa-map-marker"></i>
-          <span>Piassa,Addis Ababa</span>
+
+      <div class="card-container">
+       
+        
       </div>
-      <div class="details">
-        <span>Average price:</span>12,953 ETB
-      </div>
-      <div class="details">
-        <span>Available Cars:</span>
-        <a href="drift-view-list.html">View List</a>
-      </div>
-        <h3>Reviews</h3>
-        <div class="reviews">
-          
-          <div class="review">
-            <i class="fa fa-user"></i>
-            <p>"Great service!"</p>
-          </div>
-         
-        </div>
-        <div class="more-link">
-          <a href="#">More... ></a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="images/car3.jpg" alt="Car">
-        <h2>Rider Car Rental</h2>
-        <div class="location">
-          <i class="fa fa-map-marker"></i>
-          <span>Bahirdar</span>
-        </div>
-        <div class="details">
-            <span>Average price:</span>12,673 ETB
-          </div>
-        <div class="details">
-          <span>Available Cars:</span>
-          <a href="rider-view-list.html">View List</a>
-        </div>
-        <h3>Reviews</h3>
-        <div class="reviews">
-          <!-- Repeat for each review -->
-          <div class="review">
-            <i class="fa fa-user"></i>
-            <p>"Great service!"</p>
-          </div>
-          <!-- ... -->
-        </div>
-        <div class="more-link">
-          <a href="#">More... ></a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="images/car4.jpg" alt="Car">
-        <h2>Trip Car Rental</h2>
-        <div class="location">
-          <i class="fa fa-map-marker"></i>
-          <span>Adama</span>
-        </div>
-        <div class="details">
-            <span>Average price:</span>11,655 ETB
-          </div>
-        <div class="details">
-          <span>Available Cars:</span>
-          <a href="trip-view-list.html">View List</a>
-        </div>
-        <h3>Reviews</h3>
-        <div class="reviews">
-          <!-- Repeat for each review -->
-          <div class="review">
-            <i class="fa fa-user"></i>
-            <p>"Great service!"</p>
-          </div>
-          <!-- ... -->
-        </div>
-        <div class="more-link">
-          <a href="#">More... ></a>
-        </div>
-      </div>
-    <!-- ... Other cards ... -->
-  </div>
+      
     <footer>
         <div class="multiple">
             <div class="contact">
@@ -239,11 +134,12 @@
         <p class="footer-p"> &#9400;Copyright | JAN 2024 G.C | Published By Zurets </p>
        </footer>
        <script src="javascript/user-feature/js.js"></script>
+       <script src="javascript/car-rental/car-rental.js"></script>
      
 <script>
     document.addEventListener("DOMContentLoaded", function () {
       const searchBar = document.querySelector(".search-bar input");
-      const cards = document.querySelectorAll(".card");
+      const cards = document.querySelectorAll(".card-container .card");
   
       searchBar.addEventListener("input", function () {
         const searchTerm = searchBar.value.toLowerCase();
@@ -260,22 +156,20 @@
           }
         });
       });
-  
-      // Add click event to toggle the hidden content on "More..." link click
       cards.forEach((card) => {
         const moreLink = card.querySelector(".more-link a");
   
         moreLink.addEventListener("click", function (event) {
-          event.preventDefault(); // Prevent the default link behavior
-  
-          // Find the parent card of the clicked more-link
+          event.preventDefault();
           const clickedCard = event.target.closest(".card");
-  
-          // Toggle the expanded state for the clicked card
           clickedCard.classList.toggle("expanded");
         });
       });
     });
+
+    window.onload = function(){
+      getCars();
+    }
   </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-import { tourismSite } from "../tourism-site.enum";
+import { hotels } from "../hotels.enum";
 export declare class getHotelFilterDto {
-    tourismSite: tourismSite;
+    hotels: hotels;
 }

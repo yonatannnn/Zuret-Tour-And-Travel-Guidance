@@ -65,9 +65,9 @@ body{
     text-decoration: none; 
     padding: 0.5em; 
 }  
-
 .nav-menu .nav-box a:hover{  
     color: #ECB100; 
+   
 } 
 .nav-brand{ 
     color: rgb(0, 0, 0); 
@@ -730,7 +730,7 @@ footer{
 }
 
 li:hover{
-  color: #ECB100;
+  color: #000000;
 }
 footer{
   background-color: rgb(37, 36, 36);

@@ -1,8 +1,7 @@
 export declare class CreateHotelDto {
     readonly name: string;
     readonly picturePath: string;
-    readonly price: number;
+    readonly roomPrice: number;
     readonly location: string;
-    readonly tourismSite: string;
-    readonly rating: number;
+    readonly starStat: number;
 }

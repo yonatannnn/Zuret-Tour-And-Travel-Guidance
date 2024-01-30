@@ -1,11 +1,11 @@
 import { IsIn, IsNotEmpty, IsOptional } from "class-validator";
-import { tourismSite } from "../tourism-site.enum";
+import { hotels } from "../hotels.enum";
 
 export class getHotelFilterDto{
 
     @IsOptional()
-    @IsIn([tourismSite.Harar,tourismSite.AXUM,tourismSite.LALIBELA])
-    tourismSite: tourismSite
+    @IsIn([hotels.piasa,hotels.Bole])
+hotels:hotels
 
   
 }

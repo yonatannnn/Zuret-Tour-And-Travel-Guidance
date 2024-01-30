@@ -1,9 +1,8 @@
 export interface Hotel{
     id?:string;
     name:string;
-    location?:string;
-    tourismSite:string;
-    rating:number;
-    price:number;
-    picturePath:string;
+    location:string;
+    picturePath?:string;
+    roomPrice:number;
+    starStat:number;
 }

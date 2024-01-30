@@ -44,7 +44,7 @@ let HotelsController = class HotelsController {
             throw new common_1.BadRequestException("File is not appropriate");
         }
         else {
-            const filePathURL = `http://localhost:3000/hotels/viewImage/${file.filename}`;
+            const filePathURL = `http://localhost:3000/salons/viewImage/${file.filename}`;
             this.hotelService.create(hotelDTO, filePathURL);
         }
     }

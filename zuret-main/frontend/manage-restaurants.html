@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Manage restaurants</title>
+</head>
+<body>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management</title>
+    <link rel="stylesheet" href="cssFiles/styles.css">
+    <link rel="stylesheet" href="cssFiles/restaurants.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar"> 
+            <div class="nav-brand">
+                <div class=""> 
+                    <img src="images/logo.jpg" width="100vw" height="50vh"> 
+                </div>  
+                <div class="span"> 
+                    <span>Zuret Tour and Travel Guidance</span>
+                </div>
+            </div> 
+            <div class="hamburger-menu">  
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="1.5em" width="1.5em"> 
+                    <g stroke-width="0"></g> 
+                    <g stroke-linecap="round" stroke-linejoin="round"></g> 
+                    <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round" 
+                        stroke-linejoin="round"></path> 
+                </svg> 
+                 
+            </div>  
+            <div class="nav-menu hide"> 
+                <div class="nav-box opened"> 
+                    <a href="discover.html">Discover</a> 
+                </div> 
+                <div class="nav-box"> 
+                    <a href="about.html">About</a> 
+                </div> 
+                <div class="nav-box dropdown"> 
+                    <button class="dropbtn" id="spotlight">Restaurants</button> 
+                    <div class="dropdown-content">
+                            <a id="dropdown-anchor" href="hotels.html">Hotels</a>
+                            <a id="dropdown-anchor"  href="restaurants.html">Restaurants</a>
+                            <a id="dropdown-anchor"  href="carRental.html">Rental Cars</a>
+                    </div>
+                </div> 
+                <div class="nav-box"> 
+                    <a href="plans.html">Trip Plans</a> 
+                </div> 
+                <div class="nav-box"> 
+                    <a href="expense.html">Expense</a> 
+                </div> 
+                <div class="nav-box dropdown"> 
+                    <button class="dropbtn">Settings</button> 
+                    <div class="dropdown-content">
+                            <a id="dropdown-anchor"  href="profile.html">Profile</a>
+                            <a id="dropdown-anchor"  href="support.html">Support</a>
+                    </div>
+                </div> 
+            </div>  
+        </nav>
+    </header> -->
+
+    <div class="container mt-5 text-center">
+        <table class="table">
+          <button id="openForm" type="button" class="btn bg-blue-500 text-white text-2xl p-3 rounded-3xl" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add new Restaurant
+          </button>
+
+            
+            <div id="body">
+               
+
+    
+              </div>
+          </table>
+         
+    </div>
+    
+    <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="overlay hidden">
+  <div class="popup"> 
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-100  p-4 w-1/2 h-1/2 shadow-2xl  ">
+          <div class=" text-sky-800 text-center font-bold  text-3xl mb-3">Add Salon</div>
+         
+          <form id="form">
+                  <div class=" form-group mb-4">
+                      <input class="border-2 w-full focus:border-blue-500 px-4 py-2" type="text" id="name" class="form-control" required placeholder="Enter Restaurant Name" name="name">
+                  </div>
+                  <div class="form-group mb-3">
+                      <input class="border-2 w-full focus:border-blue-500 px-4 py-2" type="text" id="location" class="form-control" required placeholder="Enter location" name="location">
+                  </div>
+                 
+                  <div class="mb-3">
+                      <input class="p-3 " type="file" name="file" required>
+                  </div>
+                  <button type="submit" class="bg-blue-500 text-white text-xl p-2 rounded-3xl" value="submit">submit</button>
+              
+          </form>
+          <div class="error text-danger mt-3"></div>
+        
+    <div class="flex justify-center"> 
+        <button class="bg-red-600 p-3 text-xl rounded-2xl text-white" id="closeForm" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+      </div>
+      </div>
+
+    
+</body>
+<script src="javascript/restaurants-feature/pop.js"></script>
+<script src="javascript/manage-restaurants/manage-restaurants.js"></script>
+
+</html>

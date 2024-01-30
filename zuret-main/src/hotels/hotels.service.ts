@@ -11,11 +11,11 @@ export class HotelsService {
    
     async getHotels(filterDto:getHotelFilterDto):Promise<Hotel[]>{
         let options={}
-        const {tourismSite}=filterDto
-        console.log(tourismSite)
-        if (tourismSite){
+        const {hotels}=filterDto
+        console.log(hotels)
+        if (hotels){
             options={
-                tourismSite:tourismSite
+                hotels:hotels
             }
         }
         return await this.hotelModel.find(options);

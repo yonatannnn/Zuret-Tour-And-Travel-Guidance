@@ -16,7 +16,11 @@ const users_module_1 = require("./users/users.module");
 const user_data_module_1 = require("./user-data/user-data.module");
 const config_1 = require("@nestjs/config");
 const hotels_module_1 = require("./hotels/hotels.module");
+const restaurants_module_1 = require("./restaurants/restaurants.module");
+const booking_module_1 = require("./restaurantReservation/booking.module");
 const mongo_keys_1 = require("./config/mongo.keys");
+const car_org_module_1 = require("./car-org/car-org.module");
+const cars_module_1 = require("./cars/cars.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -24,7 +28,8 @@ AppModule = __decorate([
         imports: [user_data_module_1.UserDataModule, auth_module_1.AuthModule, users_module_1.UsersModule, config_1.ConfigModule.forRoot(),
             mongoose_1.MongooseModule.forRoot(mongo_keys_1.default.mongoURi),
             user_data_module_1.UserDataModule,
-            hotels_module_1.HotelsModule],
+            hotels_module_1.HotelsModule,
+            restaurants_module_1.RestaurantsModule, booking_module_1.BookingModule, car_org_module_1.CarOrgModule, cars_module_1.CarsModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

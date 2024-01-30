@@ -11,13 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getHotelFilterDto = void 0;
 const class_validator_1 = require("class-validator");
-const tourism_site_enum_1 = require("../tourism-site.enum");
+const hotels_enum_1 = require("../hotels.enum");
 class getHotelFilterDto {
 }
 __decorate([
     (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsIn)([tourism_site_enum_1.tourismSite.Harar, tourism_site_enum_1.tourismSite.AXUM, tourism_site_enum_1.tourismSite.LALIBELA]),
+    (0, class_validator_1.IsIn)([hotels_enum_1.hotels.piasa, hotels_enum_1.hotels.Bole]),
     __metadata("design:type", String)
-], getHotelFilterDto.prototype, "tourismSite", void 0);
+], getHotelFilterDto.prototype, "hotels", void 0);
 exports.getHotelFilterDto = getHotelFilterDto;
 //# sourceMappingURL=filter-hotel.dto.js.map

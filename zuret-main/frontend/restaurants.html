@@ -59,17 +59,12 @@
         </nav>
     </header>
     <main id="hotels-page-main">
-        <!-- <div class="search-container">
-            <input type="text" id="search-input" placeholder="Restaurant name ...">
-            <button id="search-button">
-                <img src="images/magnifying-glass-solid.svg" alt="Search">
-            </button>
-        </div> -->
+       
         <div class="search-bar">
             <input type="text" placeholder="Restaurant name ...">
             <button type="submit"><i class="fa fa-search"></i></button>  
         </div>
-        <div class="restaurant-container">
+        <!-- <div class="restaurant-container">
             <div class="restaurant-card">
                 <div class="favourite-icon" onclick="changeFavoriteIcon()">
                     <img src="images/heart-regular (1).svg" alt="" class="heart-icon" id="favorite-icon">
@@ -94,12 +89,14 @@
                         </div>
                         <div class="restaurant-location">
                             <p><img src="images/location-dot-solid.svg" alt=""> 4 kilo, Addis Ababa</p>
-                        <button class="reserve-botton">Reserve Seat</button>
+                            <button class="reserve-botton" id="openForm">
+                                Reserve Seat
+                            </button>                        
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="restaurant-card">
+            </div> -->
+            <!-- <div class="restaurant-card">
                 <div class="favourite-icon" onclick="changeFavoriteIcon()">
                     <img src="images/heart-regular (1).svg" alt="" class="heart-icon" id="favorite-icon">
                 </div>
@@ -123,7 +120,9 @@
                         </div>
                         <div class="restaurant-location">
                             <p><img src="images/location-dot-solid.svg" alt=""> 4 kilo, Addis Ababa</p>
-                        <button class="reserve-botton">Reserve Seat</button>
+                            <button class="reserve-botton" id="openForm">
+                                Reserve Seat
+                            </button>                        
                         </div>
                     </div>
                 </div>
@@ -152,10 +151,76 @@
                         </div>
                         <div class="restaurant-location">
                             <p><img src="images/location-dot-solid.svg" alt=""> 4 kilo, Addis Ababa</p>
-                        <button class="reserve-botton">Reserve Seat</button>
+                        <button class="reserve-botton" id="openForm">
+                            Reserve Seat
+                        </button>
                         </div>
                     </div>
                 </div>
+            </div> -->
+            <!-- <div class="container mt-5 text-center"> -->
+
+
+
+
+                <div id="body">
+        
+        
+        
+                </div>
+        
+        
+              <!-- </div> -->
+        </div>
+
+       
+        <div class="overlay">
+            <div class="popup">
+            <h2>Popup Form</h2>
+            <form>
+                <div>
+                    <label>Enter your full name:</label>
+                    <input type="text" id="name" placeholder="Enter Your Full Name">
+                </div>
+                <div>
+                    <label>Enter your email:</label>
+                    <input type="text" id="email" placeholder="Enter Your email">
+                </div>
+                <div> 
+                <label>Choose table:</label>
+                    <select id="style">
+                    <option value="couple">Table for couple</option>
+                    <option value="group">Table for Group</option>
+                    <option value="single">Single Table</option>
+                </select></div>
+                    
+                    <div>
+                      <label>Choose Date and Time:</label>
+                      <div>
+                        <input id="date" type="date">
+                      <select id="time" name="style">
+                        <option value="1:00AM">1:00AM</option>
+                        <option value="2:00AM">2:00AM</option>
+                        <option value="3:00AM">3:00AM</option>
+                        <option value="4:00AM">4:00AM</option>
+                        <option value="5:00AM">5:00AM</option>
+                        <option value="6:00AM">6:00AM</option>
+                        <option value="8:00PM">8:00PM</option>
+                        <option value="9:00PM">9:00PM</option>
+                        <option value="10:00PM">10:00PM</option>
+                        <option value="11:00PM">11:00PM</option>
+                        <option value="12:00PM">12:00PM</option>
+                        <option value="1:00PM">1:00PM</option>
+                        </select>
+                      </div>
+                      
+                    </div>
+                      
+                    <div class="self-center">
+                      <button type="submit" id="updateButton" onclick="redirect()">Reserve</button>
+                    </div>
+            </form>
+            <button id="closeForm">Close</button>
             </div>
         </div>
     </main>
@@ -226,15 +291,32 @@
               const cardTitle = card.querySelector("h2").innerText.toLowerCase();
       
               if (cardTitle.includes(searchTerm)) {
-                mainCard.classList.remove("hide");
-                mainCard.classList.add("full-width", "expanded");
+                card.classList.remove("hide");
+                card.classList.add("full-width", "expanded");
               } else {
-                mainCard.classList.add("hide");
-                mainCard.classList.remove("full-width", "expanded");
+                card.classList.add("hide");
+                card.classList.remove("full-width", "expanded");
               }
             });
           });
         })
+
+        
+        var openFormButton = document.querySelectorAll('.reserve-botton');
+        var closeFormButton = document.getElementById('closeForm');
+        var overlay = document.querySelector('.overlay');
+    
+        openFormButton.addEventListener('click', function() {
+        overlay.style.display = 'block';
+        });
+    
+        closeFormButton.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        });
+
  </script>
-       <script src="javascript/user-feature/js.js"></script></body>
+       <script src="javascript/restaurants-feature/restaurants_page.js"></script>
+       <script src="javascript/restaurants-feature/reserve.js"></script>
+
+    </body>
 </html>
