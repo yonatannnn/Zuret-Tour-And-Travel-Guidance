@@ -10,7 +10,7 @@ import { UserDataController } from './user-data/user-data.controller';
 import { UserDataService } from './user-data/user-data.service';
 import { UserDataModule } from './user-data/user-data.module';
 import { ConfigModule } from '@nestjs/config';
-import { HotelsModule } from './hotels/hotels.module';
+
 import { RestaurantModule } from './restaurants/restaurant.module';
 import config from './config/mongo.keys'
 import { CarOrgModule } from './car-org/car-org.module';
