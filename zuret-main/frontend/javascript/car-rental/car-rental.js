@@ -404,6 +404,22 @@ body: JSON.stringify(postData)
 const search = () => {
   const cardContainer = document.querySelector('.card-container');
   const searchInput = document.querySelector('#searchInput');
+  let errors = [];
+
+  
+  
+  
+  if (!searchInput.value) {
+    errors.push('⚠️Enter the place name');
+  }
+  else if(searchInput.value.length<=2 || searchInput.value.length>=50 || searchInput.value==87){
+    errors.push('⚠️The place does not exist');
+}
+  if (errors.length > 0) {
+    error.innerText = errors.join('\n');
+    error.style.display = 'block';
+  } 
+  else {
   var template = ''
   const requestOptions = {
       method: 'GET',
@@ -469,4 +485,4 @@ template += eachCard
 
 }
 
-
+}

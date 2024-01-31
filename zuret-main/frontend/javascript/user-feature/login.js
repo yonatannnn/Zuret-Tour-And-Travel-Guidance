@@ -12,35 +12,35 @@ login_submit.addEventListener('click', function(e){
     e.preventDefault()
 
     if (!email.value){
-        value.push('Please correcrt formatted email')
+        value.push('Please correct formatted email')
     } 
 
     if (!email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
-        value.push('Please correcrt formatted email')
+        value.push('⚠️Please correct formatted email')
     }
 
     if (!password.value){
-        value.push('Please enter the password')
+        value.push('⚠️Please enter the password')
     } 
 
     if (password.value){
     
         if (password.value.length < 8){
-            value.push('incorrect password')
+            value.push('⚠️incorrect password')
 
         }
     }
     
-    if (value.length > 0){
-        if (value.length == 4){
-            error.innerText = `Please fill all fields`
+    
+        if (value.length == 3){
+            error.innerText = `⚠️Please fill all fields`
             error.style.display = 'block'
         }
-        else{
-            error.innerText = value[0]
-            error.style.display = 'block'
-        }
-     }
+        else if (value.length > 0) {
+            error.innerText = value.join('\n');
+            error.style.display = 'block';
+          }
+    
 
      else{
         localStorage.setItem(`currentEmail`, email.value);
@@ -73,7 +73,7 @@ login_submit.addEventListener('click', function(e){
             
         } ).catch((erro) => {
             
-            error.innerText=`wrong credentials`;
+            error.innerText=`⚠️wrong credentials`;
             error.style.display = "block";
           });
         
