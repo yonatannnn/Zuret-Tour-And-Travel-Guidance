@@ -4,17 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zuret</title>
+    <link rel="stylesheet" href="cssFiles/carstyle.css">
     <link rel="stylesheet" href="cssFiles/styles.css">
-    <link rel="stylesheet" href="cssFiles/profile.css">
-
+    <script src="javascript/user-feature/js.js"></script>
     <style>
-        .profile-anchor{
+        #services-anchor{
             font-size: 22px;
             background-color: #FEF7E0;
             border-radius: 40px;
             padding: 15px;
             color: #584202;
         }
+    /* Basic styling for the menu container */
+.Menu {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Style each card within the menu */
+.eachCard {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.eachCard:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.eachCard h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.eachCard a {
+    background-color:white;
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.eachCard a:hover {
+    text-decoration: underline;
+}
+
+#cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} 
     </style>
 </head>
 <body>
@@ -38,39 +85,63 @@
                  
             </div>  
             <div class="nav-menu hide"> 
-                <div class="nav-box opened"> 
-                    <a href="discover.html">Discover</a> 
-                </div> 
-                <div class="nav-box"> 
-                    <a id="about-anchor" href="about.html">About</a> 
-                </div> 
                 <div class="nav-box dropdown"> 
-                    <button class="dropbtn" id="hotels-anchor">Our Services</button> 
+                    <button class="dropbtn" id="spotlight">Hotel</button> 
                     <div class="dropdown-content">
-                            <a id="dropdown-anchor" href="#">Hotels</a>
-                            <a id="dropdown-anchor"  href="#">Restaurants</a>
-                            <a id="dropdown-anchor"  href="#">Rental Cars</a>
+                        <a href="addHotel.html">Add Hotel</a>
+                        <a href="listOfHotels(Admin).html">Add Room</a>
                     </div>
                 </div> 
-                <div class="nav-box"> 
-                    <a href="plans.html">Trip Plans</a> 
-                </div> 
-                <div class="nav-box"> 
-                    <a href="expense.html">Expense</a> 
-                </div> 
                 <div class="nav-box dropdown"> 
-                    <button class="dropbtn">Profile</button> 
+                    <button class="dropbtn" id="spotlight">Car Rental</button> 
                     <div class="dropdown-content">
-                            <!-- <a id="dropdown-anchor spotlight"  href="profile.html">Profile</a> -->
-                            <a id="dropdown-anchor"  href="support.html">Support</a>
+                        <a href="carRentAdmin.html">Add Car Rental Company</a>
+                <a href="carOrgs.html">Add Car</a>
                     </div>
-                </div> 
+                </div>
+                <div class="nav-box dropdown"> 
+                    <button class="dropbtn" id="spotlight">Restaurant</button> 
+                    <div class="dropdown-content">
+                        <a href="addRestaurant.html">Add Restaurant</a>
+                        <a href="listOfRestaurants(admin).html">Add Seat</a>
+                    </div>
+                </div>
+                <div class="nav-box dropdown"> 
+                    <button class="dropbtn" id="spotlight">Tourist Site</button> 
+                    <div class="dropdown-content">
+                        <a href="addTouristSite.html">Add Tourist site</a>
+                    </div>
+                </div>
             </div>  
         </nav>
     </header>
-    <div class="profile-container">
-    
+    <div class="Menu">
+        <h1>Manage</h1>
+        <div id="cont">
+            <div class="eachCard">
+                <h3>Hotel</h3>
+                <a href="addHotel.html">Add Hotel</a>
+                <a href="listOfHotels(Admin).html">Add Room</a>
+            </div>
+            <div class="eachCard">
+                <h3>Restaurant</h3>
+                <a href="addRestaurant.html">Add Restaurant</a>
+                <a href="listOfRestaurants(admin).html">Add Seat</a>
+            </div>
+            <div class="eachCard">
+                <h3>Tourist Site</h3>
+                <a href="addTouristSite.html">Add Tourist site</a>
+            </div>
+            <div class="eachCard">
+                <h3>Car Rental</h3>
+                <a href="carRentAdmin.html">Add Car Rental Company</a>
+                <a href="carOrgs.html">Add Car</a>
+            </div>
+        </div>
+        
+        
     </div>
+      
     <footer>
         <div class="multiple">
             <div class="contact">
@@ -125,13 +196,5 @@
         </div> 
         <p class="footer-p"> &#9400;Copyright | JAN 2024 G.C | Published By Zurets </p>
        </footer>
-       <script src="javascript/user-feature/js.js"></script>
-       <script src="javascript/user-feature/profile.js">
-       </script>
-       <script>
-        window.onload = function(){
-            setProfileData();
-        }
-       </script>
 </body>
 </html>
