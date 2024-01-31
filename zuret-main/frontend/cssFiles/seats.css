@@ -1,0 +1,4 @@
+.card-txt{
+    display:flex;
+    flex-direction: column;
+}

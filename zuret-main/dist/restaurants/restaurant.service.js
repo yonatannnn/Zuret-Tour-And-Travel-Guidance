@@ -20,12 +20,11 @@ let RestaurantService = class RestaurantService {
     constructor(restaurantModel) {
         this.restaurantModel = restaurantModel;
     }
-    async addRestaurant(name, location, imagePath, imagePath1) {
+    async addRestaurant(name, location, imagePath) {
         const newRestaurant = new this.restaurantModel({
             name: name,
             location: location,
             imagePath: imagePath,
-            imagePath1: imagePath1,
             review: [],
             seats: [],
             average_price: 0
@@ -44,7 +43,6 @@ let RestaurantService = class RestaurantService {
             seats: co.seats,
             review: co.review,
             imagePath: co.imagePath,
-            imagePath1: co.imagePath1,
         }));
     }
     async getSingleRestaurant(orgId) {
@@ -57,10 +55,9 @@ let RestaurantService = class RestaurantService {
             seats: co.seats,
             review: co.review,
             imagePath: co.imagePath,
-            imagePath1: co.imagePath1
         };
     }
-    async updateRestaurant(id, name, location, seats, review, imagePath, imagePath1) {
+    async updateRestaurant(id, name, location, seats, review, imagePath) {
         try {
             const updatedRestaurant = await this.findRestaurant(id);
             if (name) {
@@ -77,9 +74,6 @@ let RestaurantService = class RestaurantService {
             }
             if (imagePath) {
                 updatedRestaurant.imagePath = imagePath;
-            }
-            if (imagePath1) {
-                updatedRestaurant.imagePath1 = imagePath1;
             }
             await updatedRestaurant.save();
             return updatedRestaurant;

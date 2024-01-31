@@ -19,8 +19,8 @@ let RestaurantController = class RestaurantController {
     constructor(restaurantService) {
         this.restaurantService = restaurantService;
     }
-    async addRestaurant(name, location, imagePath, imagePath1) {
-        const generatedId = await this.restaurantService.addRestaurant(name, location, imagePath, imagePath1);
+    async addRestaurant(name, location, imagePath) {
+        const generatedId = await this.restaurantService.addRestaurant(name, location, imagePath);
         return { id: generatedId };
     }
     async getAllrestaurant() {
@@ -30,8 +30,8 @@ let RestaurantController = class RestaurantController {
     getRestaurant(orgId) {
         return this.restaurantService.getSingleRestaurant(orgId);
     }
-    async updateRestaurant(orgId, orgName, orgLocation, orgSeats, orgReview, orgImagePath, orgImagePath1) {
-        await this.restaurantService.updateRestaurant(orgId, orgName, orgLocation, orgSeats, orgReview, orgImagePath, orgImagePath1);
+    async updateRestaurant(orgId, orgName, orgLocation, orgSeats, orgReview, orgImagePath) {
+        await this.restaurantService.updateRestaurant(orgId, orgName, orgLocation, orgSeats, orgReview, orgImagePath);
         return this.getRestaurant(orgId);
     }
     async deleteRestaurant(restaurantId) {
@@ -44,9 +44,8 @@ __decorate([
     __param(0, (0, common_1.Body)('name')),
     __param(1, (0, common_1.Body)('location')),
     __param(2, (0, common_1.Body)('imagePath')),
-    __param(3, (0, common_1.Body)('imagePath1')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, String, String, String]),
+    __metadata("design:paramtypes", [String, String, String]),
     __metadata("design:returntype", Promise)
 ], RestaurantController.prototype, "addRestaurant", null);
 __decorate([
@@ -70,9 +69,8 @@ __decorate([
     __param(3, (0, common_1.Body)('seats')),
     __param(4, (0, common_1.Body)('review')),
     __param(5, (0, common_1.Body)('imagePath')),
-    __param(6, (0, common_1.Body)('imagePath1')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, String, String, Object, Object, String, String]),
+    __metadata("design:paramtypes", [String, String, String, Object, Object, String]),
     __metadata("design:returntype", Promise)
 ], RestaurantController.prototype, "updateRestaurant", null);
 __decorate([

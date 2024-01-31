@@ -401,6 +401,72 @@ body: JSON.stringify(postData)
 
 
 
+const search = () => {
+  const cardContainer = document.querySelector('.card-container');
+  const searchInput = document.querySelector('#searchInput');
+  var template = ''
+  const requestOptions = {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json'
+      }
+    };
 
+
+  fetch(apiUrl, requestOptions)
+.then(response => {
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  return response.json();
+})
+.then(data => {
+  const filteredData = data.filter(org => {
+    const orgName = org.name.toLowerCase();
+    const searchTerm = searchInput.value.toLowerCase();
+    return orgName.includes(searchTerm);
+  });
+
+  filteredData.forEach(org => {
+    var eachCard = `
+ 
+  <div class="card">
+  <img src="${org.imagePath}" alt="Car">
+  <h2>${org.name}</h2>
+  <div class="location">
+    <i class="fa fa-map-marker"></i>
+    <span>${org.location}</span>
+  </div>
+  <div class="details">
+      <span>Average price:</span>${org.average_price} ETB
+    </div>
+  <div class="details">
+    <span>Available Cars:</span>
+    <a href="rider-view-list.html id = ${org.id}">View List</a>
+  </div>
+  <h3>Reviews</h3>
+  <div class="reviews">
+    <div class="review">
+      <i class="fa fa-user"></i>
+      <p>"Great service!"</p>
+    </div>
+    <!-- ... -->
+  </div>
+  <button class="more-link" data-id="${org.id}" onclick="saveCarCompId(event)">
+    <a href="cars.html">More... ></a>
+  </button>
+</div>`
+
+template += eachCard    
+  });
+  console.log(template);
+  cardContainer.innerHTML = template;
+})
+.catch(error => {
+  console.error('Fetch error:', error);
+});
+
+
+}
 
 

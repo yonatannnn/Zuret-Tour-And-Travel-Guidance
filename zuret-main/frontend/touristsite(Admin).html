@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="cssFiles/carstyle.css">
     <link rel="stylesheet" href="cssFiles/styles.css">
 </head>
-<body id="orgContainer">
+<body>
     <header>
         <nav class="navbar"> 
             <div class="nav-brand">
@@ -59,11 +59,18 @@
             </div>  
         </nav>
     </header>
-    <button onclick="loadTouristSite()">click</button>
+    <div class="searchingBar">
+        <input type="text" id="searchInput" placeholder="Search by name">
+        <button onclick="search()">search</button>
+    </div>
+    <div id="orgContainer">
+
+    </div>
     <script src="javascript/admin-feature/touristSite.js"></script>
     <script>
         window.onload = function(){
             loadTouristSite();
+            
         }
     </script>
 </body>

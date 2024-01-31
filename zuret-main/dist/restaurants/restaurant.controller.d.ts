@@ -2,7 +2,7 @@ import { RestaurantService } from './restaurant.service';
 export declare class RestaurantController {
     private readonly restaurantService;
     constructor(restaurantService: RestaurantService);
-    addRestaurant(name: string, location: string, imagePath: string, imagePath1: string): Promise<{
+    addRestaurant(name: string, location: string, imagePath: string): Promise<{
         id: any;
     }>;
     getAllrestaurant(): Promise<{
@@ -13,7 +13,6 @@ export declare class RestaurantController {
         seats: object;
         review: object;
         imagePath: string;
-        imagePath1: string;
     }[]>;
     getRestaurant(orgId: string): Promise<{
         id: string;
@@ -23,9 +22,8 @@ export declare class RestaurantController {
         seats: object;
         review: object;
         imagePath: string;
-        imagePath1: string;
     }>;
-    updateRestaurant(orgId: string, orgName: string, orgLocation: string, orgSeats: object, orgReview: object, orgImagePath: string, orgImagePath1: string): Promise<{
+    updateRestaurant(orgId: string, orgName: string, orgLocation: string, orgSeats: object, orgReview: object, orgImagePath: string): Promise<{
         id: string;
         name: string;
         location: string;
@@ -33,7 +31,6 @@ export declare class RestaurantController {
         seats: object;
         review: object;
         imagePath: string;
-        imagePath1: string;
     }>;
     deleteRestaurant(restaurantId: string): Promise<any>;
 }

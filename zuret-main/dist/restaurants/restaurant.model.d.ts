@@ -5,7 +5,6 @@ export declare const restaurantSchema: mongoose.Schema<any, mongoose.Model<any, 
     average_price: number;
     seats: any;
     imagePath: string;
-    imagePath1: string;
     review?: any;
 }>;
 export interface restaurant extends mongoose.Document {
@@ -16,5 +15,4 @@ export interface restaurant extends mongoose.Document {
     seats: object;
     review: object;
     imagePath: string;
-    imagePath1: string;
 }

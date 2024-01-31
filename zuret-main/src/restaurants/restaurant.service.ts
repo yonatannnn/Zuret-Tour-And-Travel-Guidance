@@ -9,12 +9,11 @@ import { MongooseModule } from '@nestjs/mongoose';
 export class RestaurantService {
     constructor(@InjectModel('restaurant') private readonly restaurantModel : Model<restaurant>){}
 
-    async addRestaurant(name : string , location:string , imagePath : string, imagePath1: string){
+    async addRestaurant(name : string , location:string , imagePath : string){
         const newRestaurant = new this.restaurantModel({
             name : name,
             location : location,
             imagePath : imagePath,
-            imagePath1: imagePath1,
             review : [],
             seats : [],
             average_price : 0
@@ -34,7 +33,6 @@ export class RestaurantService {
           seats : co.seats,
           review : co.review,
           imagePath : co.imagePath,
-          imagePath1 : co.imagePath1,
         }));
     }
 
@@ -49,7 +47,6 @@ export class RestaurantService {
             seats : co.seats,
             review : co.review,
             imagePath : co.imagePath,
-            imagePath1 : co.imagePath1
         };
     }
 
@@ -60,7 +57,6 @@ export class RestaurantService {
         seats: object,
         review: object,
         imagePath: string,
-        imagePath1: string
       ) {
         try {
           const updatedRestaurant = await this.findRestaurant(id);
@@ -79,9 +75,7 @@ export class RestaurantService {
           if (imagePath) {
             updatedRestaurant.imagePath = imagePath;
           }
-          if (imagePath1) {
-            updatedRestaurant.imagePath1 = imagePath1;
-          }
+          
           await updatedRestaurant.save();
           return updatedRestaurant;
         } catch (error) {

@@ -423,4 +423,65 @@ body: JSON.stringify(postData)
 
 
 
+const search = () => {
+  const cardContainer = document.querySelector('.card-container');
+  const searchInput = document.querySelector('#searchInput');
+  var template = ''
+  const requestOptions = {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json'
+      }
+    };
 
+
+  fetch(apiUrl, requestOptions)
+.then(response => {
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  return response.json();
+})
+.then(data => {
+  const filteredData = data.filter(org => {
+    const orgName = org.name.toLowerCase();
+    const searchTerm = searchInput.value.toLowerCase();
+    return orgName.includes(searchTerm);
+  });
+
+  filteredData.forEach(org => {
+    var eachCard  = `
+ 
+  <div class="hotel-card">
+  <div class="hotel-image-container">
+      <img src="${org.imagePath}" alt="">
+  </div>
+  <div class="hotel-info">
+      <div class="hotel-name">
+          <h2>${org.name}</h2>
+          <div class="rate">
+          
+          <span>${org.starStat} Stars</span>
+        
+          </div>
+          <div class="location">
+              <img src="images/location-dot-solid.svg"><p>${org.location}</p>
+          </div>
+              <button class="more-link more" data-id="${org.id}" onclick="saveHotelId(event)">
+              <a href="room.html">More... ></a>
+            </button>                        
+          
+      </div>
+  </div>
+</div>
+`
+
+template += eachCard    
+  });
+  console.log(template);
+  cardContainer.innerHTML = template;
+})
+.catch(error => {
+  console.error('Fetch error:', error);
+});
+}

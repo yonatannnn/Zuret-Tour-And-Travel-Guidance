@@ -72,7 +72,7 @@
     
     <div class="search-bar">
       <input type="text" id='searchInput' placeholder="Enter a Car Rental Company..." />
-      <button type="submit"><i class="fa fa-search"></i></button>
+      <button type="submit" onclick="search()">search</button>
     </div>
 
       <div class="card-container">
@@ -139,24 +139,7 @@
      
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const searchBar = document.querySelector(".search-bar input");
-      const cards = document.querySelectorAll(".card-container .card");
-  
-      searchBar.addEventListener("input", function () {
-        const searchTerm = searchBar.value.toLowerCase();
-  
-        cards.forEach((card) => {
-          const cardTitle = card.querySelector("h2").innerText.toLowerCase();
-  
-          if (cardTitle.includes(searchTerm)) {
-            card.classList.remove("hide");
-            card.classList.add("full-width", "expanded");
-          } else {
-            card.classList.add("hide");
-            card.classList.remove("full-width", "expanded");
-          }
-        });
-      });
+   
       cards.forEach((card) => {
         const moreLink = card.querySelector(".more-link a");
   

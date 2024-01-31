@@ -327,3 +327,66 @@ body: JSON.stringify(postData)
 
 
 }
+
+
+const search = () => {
+  const cardContainer = document.querySelector('.card-container');
+  const searchInput = document.querySelector('#searchInput');
+  var template = ''
+  const requestOptions = {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json'
+      }
+    };
+
+
+  fetch(apiUrl, requestOptions)
+.then(response => {
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  return response.json();
+})
+.then(data => {
+  const filteredData = data.filter(org => {
+    const orgName = org.name.toLowerCase();
+    const searchTerm = searchInput.value.toLowerCase();
+    return orgName.includes(searchTerm);
+  });
+
+  filteredData.forEach(org => {
+    var eachCard  =  `
+        <div class="restaurant-card">
+            <div class="favourite-icon" onclick="changeFavoriteIcon()">
+                <img src="images/heart-regular (1).svg" alt="" class="heart-icon" id="favorite-icon">
+            </div>
+            <div class="restaurant-image-container">
+                <img src="${org.imagePath}" alt="meskot restaurant">
+            </div>
+            <div class="resaurant-info">
+                <div class="restaurant-name">
+                    <h2>${org.name}</</h2>
+                    <div class="restaurant-location">
+                        <p><img src="images/location-dot-solid.svg" alt="">${org.location}</p>
+                    </div>
+                </div>
+                <button class="more-link" data-id="${org.id}" onclick="saveSeatCompId(event)">
+                <a href="seats.html">More... ></a>
+              </button>
+            </div>
+        </div>
+  
+  `
+
+template += eachCard    
+  });
+  console.log(template);
+  cardContainer.innerHTML = template;
+})
+.catch(error => {
+  console.error('Fetch error:', error);
+});
+
+
+}

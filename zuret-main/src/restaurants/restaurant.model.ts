@@ -7,7 +7,6 @@ export const restaurantSchema = new  mongoose.Schema({
     seats  : {type : Object, required : true},
     review : Object,
     imagePath : {type : String , required : true },
-    imagePath1:{type: String, required:true}
 });
 
 export interface restaurant extends mongoose.Document{
@@ -18,5 +17,4 @@ export interface restaurant extends mongoose.Document{
     seats  : object
     review : object;
     imagePath : string;
-    imagePath1:string;
 }

@@ -9,6 +9,5 @@ exports.restaurantSchema = new mongoose.Schema({
     seats: { type: Object, required: true },
     review: Object,
     imagePath: { type: String, required: true },
-    imagePath1: { type: String, required: true }
 });
 //# sourceMappingURL=restaurant.model.js.map

@@ -18,9 +18,8 @@ export class RestaurantController {
     @Body('name') name: string,
     @Body('location') location: string,
     @Body('imagePath') imagePath: string,
-    @Body('imagePath1') imagePath1: string,
   ) {
-        const generatedId = await this.restaurantService.addRestaurant(name , location , imagePath, imagePath1);
+        const generatedId = await this.restaurantService.addRestaurant(name , location , imagePath);
         return { id : generatedId };
   }
 
@@ -43,9 +42,8 @@ export class RestaurantController {
     @Body('seats') orgSeats : object,
     @Body('review') orgReview : object,
     @Body('imagePath') orgImagePath : string,
-    @Body('imagePath1') orgImagePath1 : string,
   ) {
-    await this.restaurantService.updateRestaurant(orgId , orgName , orgLocation , orgSeats , orgReview , orgImagePath, orgImagePath1);
+    await this.restaurantService.updateRestaurant(orgId , orgName , orgLocation , orgSeats , orgReview , orgImagePath);
     return this.getRestaurant(orgId);
   }
 
