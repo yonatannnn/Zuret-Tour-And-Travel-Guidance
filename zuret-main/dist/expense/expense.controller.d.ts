@@ -32,7 +32,7 @@ export declare class ExpenseController {
         path: number;
         "companyId is": string;
     }>;
-    getAllCars(): Promise<(import("./Expense.model").Expense & {
+    getAllCars(): Promise<(import("./Expense.Model").Expense & {
         _id: import("mongoose").Types.ObjectId;
     })[]>;
     getCarById(expenseId: string): Promise<string>;

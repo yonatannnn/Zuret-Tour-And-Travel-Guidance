@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zuret</title>
     <link rel="stylesheet" href="cssFiles/styles.css">
+    <link rel="stylesheet" href="cssFiles/expense.css">
     
   
 </head>
@@ -60,10 +61,17 @@
             </div>  
         </nav>
     </header>
+    <div class="all">
+        <div class="expenseContainer" id="expenseContainer">
 
-    <div class="">
-
+        </div>
+        <div class="totalPrice">
+            <div id="totalPrice">  
+                
+            </div>
+        </div>
     </div>
+    
     <footer>
         <div class="multiple">
             <div class="contact">
@@ -119,5 +127,11 @@
         <p class="footer-p"> &#9400;Copyright | JAN 2024 G.C | Published By Zurets </p>
        </footer>
 <script src="javascript/user-feature/js.js"></script>
+<script src="javascript/user-feature/expense.js"></script>
+<script>
+    window.onload = function(){
+        getTotalExpense(localStorage.getItem('currentEmail'))
+    }
+</script>
 </body>
 </html>

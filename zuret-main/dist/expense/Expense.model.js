@@ -9,4 +9,4 @@ exports.ExpenseSchema = new mongoose.Schema({
     reason: String,
     date: String
 });
-//# sourceMappingURL=Expense.model.js.map
+//# sourceMappingURL=Expense.Model.js.map

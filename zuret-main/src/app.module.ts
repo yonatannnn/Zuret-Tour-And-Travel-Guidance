@@ -19,11 +19,12 @@ import { HotelModule } from './hotel/hotel.module';
 import { RoomsModule } from './hotel-rooms/rooms.module';
 import { SeatsModule } from './restaurantSeat/seats.module';
 import { ExpenseModule } from './expense/expense.module';
+import { TouristSiteModule } from './touristSite.html/touristSite.module';
 
 @Module({
   imports: [UserDataModule,AuthModule, UsersModule,ConfigModule.forRoot(),
     MongooseModule.forRoot(config.mongoURi ),
-    UserDataModule, CarOrgModule, CarsModule, HotelModule, RoomsModule, RestaurantModule,SeatsModule , ExpenseModule],
+    UserDataModule, CarOrgModule, CarsModule, HotelModule, RoomsModule, RestaurantModule,SeatsModule , ExpenseModule, TouristSiteModule],
   controllers: [AppController],
   providers: [AppService],
 })

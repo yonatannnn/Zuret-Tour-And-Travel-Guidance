@@ -1,0 +1,42 @@
+.all{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+}
+
+.expenseContainer{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+}
+
+#totalPrice{
+    border-style: outset;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+}
+.container{
+    font-size: 1.3em;
+    background-color: white;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 10px;
+    border-style: outset;
+    border-radius: 10px;
+}
+#PlanContainer{
+    margin-top:5em;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5em;
+}
+
+.price{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #1E90FF;
+}

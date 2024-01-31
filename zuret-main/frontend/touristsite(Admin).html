@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants</title>
+    <link rel="stylesheet" href="cssFiles/carstyle.css">
+    <link rel="stylesheet" href="cssFiles/styles.css">
+</head>
+<body id="orgContainer">
+    <header>
+        <nav class="navbar"> 
+            <div class="nav-brand">
+                <div class=""> 
+                    <img src="images/logo.jpg" width="100vw" height="50vh"> 
+                </div>  
+                <div class="span"> 
+                    <span>Zuret Tour and Travel Guidance</span>
+                </div>
+            </div> 
+            <div class="hamburger-menu">  
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="1.5em" width="1.5em"> 
+                    <g stroke-width="0"></g> 
+                    <g stroke-linecap="round" stroke-linejoin="round"></g> 
+                    <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round" 
+                        stroke-linejoin="round"></path> 
+                </svg> 
+                 
+            </div>  
+            <div class="nav-menu hide"> 
+                <div class="nav-box opened"> 
+                    <a href="discover.html">Discover</a> 
+                </div> 
+                <div class="nav-box"> 
+                    <a id="about-anchor" href="about.html">About</a> 
+                </div> 
+                <div class="nav-box dropdown"> 
+                    <button class="dropbtn" id="spotlight">Car Rentals</button> 
+                    <div class="dropdown-content">
+                            <a id="dropdown-anchor" href="hotels.html">Hotels</a>
+                            <a id="dropdown-anchor"  href="restaurants.html">Restaurants</a>
+                            <a id="dropdown-anchor"  href="carRental.html">Rental Cars</a>
+                    </div>
+                </div> 
+                <div class="nav-box"> 
+                    <a href="plans.html">Trip Plans</a> 
+                </div> 
+                <div class="nav-box"> 
+                    <a href="expense.html">Expense</a> 
+                </div> 
+                <div class="nav-box dropdown"> 
+                    <button class="dropbtn">Settings</button> 
+                    <div class="dropdown-content">
+                            <a id="dropdown-anchor"  href="profile.html">Profile</a>
+                            <a id="dropdown-anchor"  href="support.html">Support</a>
+                            <a id="dropdown-anchor"  href="home.html">LogOut</a>
+                    </div>
+                </div> 
+            </div>  
+        </nav>
+    </header>
+    <button onclick="loadTouristSite()">click</button>
+    <script src="javascript/admin-feature/touristSite.js"></script>
+    <script>
+        window.onload = function(){
+            loadTouristSite();
+        }
+    </script>
+</body>
+</html>

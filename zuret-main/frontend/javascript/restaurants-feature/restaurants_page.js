@@ -23,7 +23,7 @@ const addRestaurant = () => {
     fetch(apiUrl, requestOptions)
     .then(response => {
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      throw new Error(HTTP `HTTP error! Status: ${response.status}`);
     }
     return response.json();
   })
@@ -50,7 +50,7 @@ const getSeats = () => {
     fetch(apiUrl, requestOptions)
   .then(response => {
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      throw new Error(HTTP `HTTP error! Status: ${response.status}`);
     }
     return response.json();
   })
@@ -90,33 +90,10 @@ const getSeats = () => {
 
   
 }
-function fetchSeat(id) {
-  const nameContainer = document.querySelector('#seatname');
-  const requestOptions = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  };
-   fetch('http://localhost:3000/seats/' + id, requestOptions)
-   .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    nameContainer.innerHTML = data.brand;
-  })
-  .catch(error => {
-    console.error('Fetch error:', error);
-  });
-}
 
 
-function reserveSeat() {
 
-}
+
 
 function loadRestaurant() {
     const container = document.querySelector('#orgContainer')
@@ -132,7 +109,7 @@ function loadRestaurant() {
     fetch(apiUrl, requestOptions)
   .then(response => {
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      throw new Error(HTTP `HTTP error! Status: ${response.status}`);
     }
     return response.json();
   })
@@ -156,150 +133,145 @@ function loadRestaurant() {
   });
 
 }
-
-
-
 function buttonOnList(event) {
-    const id = event.currentTarget.getAttribute("data-id");
-    localStorage.setItem('currentId' , id)
-    console.log("Clicked button with id:", id);
+  const id = event.currentTarget.getAttribute("data-id");
+  localStorage.setItem('currentId' , id)
+  console.log("Clicked button with id:", id);
 
 }
 
 
 function addSeatToThis(companyId){
-    const apiUrlCar = 'http://localhost:3000/seats'
-    const tableType = document.getElementById('tableType');
-    const imagePath = document.getElementById('imagePath')
-    const price = document.getElementById('price')
-    console.log(tableType.value , imagePath.value , price.value)
+  const apiUrlCar = 'http://localhost:3000/seats'
+  const tableType = document.getElementById('tableType');
+  const imagePath = document.getElementById('imagePath')
+  const price = document.getElementById('price')
+  console.log(tableType.value , imagePath.value , price.value)
 
-    
-    const postData = {
-        tableType : tableType.value,
-        imagePath : imagePath.value,
-        price : price.value,
-        companyId : companyId
-    };
-    const requestOptions = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-  body: JSON.stringify(postData)
+  
+  const postData = {
+      tableType : tableType.value,
+      imagePath : imagePath.value,
+      price : price.value,
+      companyId : companyId
+  };
+  const requestOptions = {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+body: JSON.stringify(postData)
 };
 
-    fetch(apiUrlCar, requestOptions)
-    .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log('Response data:', data);
-  })
-  .catch(error => {
-    console.error('Fetch error:', error);
-  });
-  console.log(companyId)
+  fetch(apiUrlCar, requestOptions)
+  .then(response => {
+  if (!response.ok) {
+    throw new Error(HTTP `HTTP error! Status: ${response.status}`);
+  }
+  return response.json();
+})
+.then(data => {
+  console.log('Response data:', data);
+})
+.catch(error => {
+  console.error('Fetch error:', error);
+});
+console.log(companyId)
 }
 
 const saveSeatCompId = (event) => {
-  alert('in');
-  const id = event.currentTarget.getAttribute("data-id");
-  localStorage.setItem('currentCompId' , id)
-  console.log("Clicked button with id:", id);
+alert('in');
+const id = event.currentTarget.getAttribute("data-id");
+localStorage.setItem('currentCompId' , id)
+console.log("Clicked button with id:", id);
 }
 
 const saveSeatIdForReserve = (event) => {
-  alert('in');
-  const id = event.currentTarget.getAttribute("data-id");
-  localStorage.setItem('currentCompIdForRent' , id)
-  console.log("Clicked button with id:", id);
-  window.location.href = 'seatReservationForm.html'
+alert('in');
+const id = event.currentTarget.getAttribute("data-id");
+localStorage.setItem('currentCompIdForRent' , id)
+console.log("Clicked button with id:", id);
+window.location.href = 'seatReservationForm.html'
 }
 
 
 function LoadRestaurantSeat() {
-  console.log('in');
-  const localId = localStorage.getItem('currentCompId');
-  console.log(localId);
-  const container = document.getElementById('carsss');
-  console.log(container)
-  var template = '';
-  const requestOptions = {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json'
-    }
-  };
-  
+console.log('in');
+const localId = localStorage.getItem('currentCompId');
+console.log(localId);
+const container = document.getElementById('carsss');
+console.log(container)
+var template = '';
+const requestOptions = {
+  method: 'GET',
+  headers: {
+      'Content-Type': 'application/json'
+  }
+};
 
-    fetch('http://localhost:3000/seats', requestOptions)
-    .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-        return response.json(); 
-    })
-    .then(data => {
-  data.forEach(seat => {
-    console.log(seat._id)
-    if (seat.companyId == localId){
-      var eachCard = ` <div class="cards">
-      <div class="card6 cards-common">
-  
-        <div class="card-txt">
-          <div class="check">
-            <div class="title"><h2>${seat.tableType}</h2></div>
-            <div><i class="fa fa-check-circle" aria-hidden="true"></i></div>
-          </div>
-          <div class="details">
-            <div class="more-link">
-              <button class="more-link" data-id="${seat._id}" onclick="saveSeatIdForReserve(event)">Reserve</button>
-            </div>
+
+  fetch('http://localhost:3000/seats', requestOptions)
+  .then(response => {
+  if (!response.ok) {
+    throw new Error(HTTP `HTTP error! Status: ${response.status}`);
+  }
+      return response.json(); 
+  })
+  .then(data => {
+data.forEach(seat => {
+  console.log(seat._id)
+  if (seat.companyId == localId){
+    var eachCard = ` <div class="cards">
+    <div class="card6 cards-common">
+
+      <div class="card-txt">
+        <div class="check">
+          <div class="title"><h2>${seat.tableType}</h2></div>
+          <div><i class="fa fa-check-circle" aria-hidden="true"></i></div>
+        </div>
+        <div class="details">
+          <div class="more-link">
+            <button class="more-link" data-id="${seat._id}" onclick="saveSeatIdForReserve(event)">Reserve</button>
           </div>
         </div>
-      
-     </div> `
-      template += eachCard    
-    }
-   
-    });
-    container.innerHTML = template;
-    })
-    .catch(error => {
-    console.error('Fetch error:', error);
-    });
+      </div>
+    
+   </div> `
+    template += eachCard    
+  }
+ 
+  });
+  container.innerHTML = template;
+  })
+  .catch(error => {
+  console.error('Fetch error:', error);
+  });
 
 }
 
 function reserveSeat(){
-  const url = 'http://localhost:3000/seats/65b8f42001ebddc6ac405b91';
+const url = 'http://localhost:3000/seats/65b8f42001ebddc6ac405b91';
 
 fetch(url, {
-    method: 'PATCH',
-    headers: {
-        'Content-Type': 'application/json',
-    },
+  method: 'PATCH',
+  headers: {
+      'Content-Type': 'application/json',
+  },
 })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('PATCH request succeeded with JSON response', data);
-    })
-    .catch(error => {
-        console.error('Error during PATCH request:', error);
-    });
+  .then(response => {
+      if (!response.ok) {
+          throw new Error(HTTP `HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log('PATCH request succeeded with JSON response', data);
+  })
+  .catch(error => {
+      console.error('Error during PATCH request:', error);
+  });
 
-}
-
-function reserve(id){
+}function reserve(id){
   const requestOptions = {
     method: 'GET',
     headers: {
@@ -309,7 +281,7 @@ function reserve(id){
    fetch('http://localhost:3000/seats/' + id, requestOptions)
    .then(response => {
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      throw new Error(HTTP `HTTP error! Status: ${response.status}`);
     }
     return response.json();
   })
@@ -355,17 +327,3 @@ body: JSON.stringify(postData)
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

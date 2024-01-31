@@ -66,7 +66,12 @@ login_submit.addEventListener('click', function(e){
             
             let inMemoryToken = res.access_token;
             if (inMemoryToken){
-            location.href = "discover.html";
+                if (email.value == "admin@email.com"){
+                    window.location.href = "Admin.html";
+                }
+                else{
+                    window.location.href = "discover.html";
+                }
             localStorage.setItem(`user`, JSON.stringify(res));
             }
             else{
