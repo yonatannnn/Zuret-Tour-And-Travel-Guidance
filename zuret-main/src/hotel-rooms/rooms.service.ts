@@ -24,7 +24,7 @@ export class RoomsService {
 
   async getOneRoom(id: string){
     const result = await this.findProduct(id);
-    return result.companyId;
+    return result;
   }
   
   async getAllRooms(){

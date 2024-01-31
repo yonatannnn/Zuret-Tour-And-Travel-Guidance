@@ -31,11 +31,11 @@ let SeatsService = class SeatsService {
         });
         const result = await newSeat.save();
         console.log(seat_1.localSeats);
-        return result.companyId;
+        return result;
     }
     async getOneSeat(id) {
         const result = await this.findProduct(id);
-        return result.companyId;
+        return result;
     }
     async getAllSeats() {
         const seats = await this.seatModel.find().exec();

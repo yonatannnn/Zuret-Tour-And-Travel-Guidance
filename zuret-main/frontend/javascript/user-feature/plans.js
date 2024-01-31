@@ -38,8 +38,51 @@ function getPlans(userId){
               .then(prod => {
                     console.log(prod)
                     if(d.reason == 'cars'){
-                        var eachCard = `${d.reason}    ${prod.brand}    ${prod.price}`
+                        var eachCard = `
+                        <div class="container">
+                          <div>
+                            <p>item: ${d.reason}</p>
+                          </div>
+                          <div>
+                            <p>Car Brand: ${prod.brand}</p>
+                          </div>
+                          <div>
+                          <p>Rent Price: ${prod.price}</p>
+                        </div>
+                        </div>
+                        `
                     }
+                    if(d.reason == 'seats'){
+                      var eachCard = `
+                      <div class="container">
+                          <div>
+                            <p>item: ${d.reason}</p>
+                          </div>
+                          <div>
+                            <p>Table Type: ${prod.tableType}</p>
+                          </div>
+                          <div>
+                          <p>Reservation Price: ${prod.price}</p>
+                        </div>
+                        </div>
+                      
+                      `
+                  }
+                  if(d.reason == 'rooms'){
+                    var eachCard = `
+                    <div class="container">
+                          <div>
+                            <p>item: ${d.reason}</p>
+                          </div>
+                          <div>
+                            <p>Room Type: ${prod.roomType}</p>
+                          </div>
+                          <div>
+                          <p>Booking Price: ${prod.price}</p>
+                        </div>
+                        </div>
+                        `
+                }
 
                     template += eachCard
                     console.log(template)

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./cssFiles/hotel-booking.css">
+    <link rel="stylesheet" href="./cssFiles/styles.css">
+</head>
+<body>
+    
+    <div class="Book">
+        <h1>Hotel Rooom Booking Form</h1>
+        
+        <form id="room-booking form">
+            <p id="roomname">Double Room</p>
+            <p>
+                Name:<input type="text" placeholder="Leo" name="First Name"required>
+            </p>
+            <p>
+                Checkin Date: <input type="date" name="Exp_Date" id="Exp_Date" required>
+            </p>
+            <p>
+                Checkout Date: <input type="date" name="Exp_Date" id="Exp_Date" required>
+            </p>
+            <p> Room Type: 
+                <select name="Card_Type" id="Card_Type" required>
+                    <option class="scroll" value="">--Select Your Room Type--</option>
+                    <option class="scroll" value="Master Card">Single Room</option>
+                    <option class="scroll" value="VISA ">Double Room</option>
+                    <option class="scroll" value="Pay Pal">Twin Room</option>
+                    <option class="scroll" value="Master Card">Tripple Room</option>
+                    <option class="scroll" value="VISA ">Queen Room</option>
+                    <option class="scroll" value="Pay Pal">King Room</option>
+                    <option class="scroll" value="Master Card">Quad Room</option>
+                    <option class="scroll" value="VISA ">Family Room</option>
+                    <option class="scroll" value="Pay Pal">Adjoining Room</option>
+                </select>   
+            </p>
+        </form>
+        <a href="./pay.html"><button type="submit" onclick="book(localStorage.getItem('currentCompIdForRent'))">Go to Payment >></button></a>
+        <button onclick="book(localStorage.getItem('currentCompIdForRent'))">click</button>
+    </div>
+    <script src="./javascript/hotels-feature/manage-hotels.js"></script>
+    <script>
+        window.onload = function(){
+            fetchRoom(localStorage.getItem('currentCompIdForRent'));
+        };
+    </script>
+</body>
+</html>

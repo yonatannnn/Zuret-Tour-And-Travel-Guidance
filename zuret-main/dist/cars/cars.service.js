@@ -35,7 +35,7 @@ let CarsService = class CarsService {
     }
     async getOneCar(id) {
         const result = await this.findProduct(id);
-        return result.companyId;
+        return result;
     }
     async getAllCars() {
         const cars = await this.carModel.find().exec();

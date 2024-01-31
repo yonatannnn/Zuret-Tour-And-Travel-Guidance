@@ -35,7 +35,7 @@ let RoomsService = class RoomsService {
     }
     async getOneRoom(id) {
         const result = await this.findProduct(id);
-        return result.companyId;
+        return result;
     }
     async getAllRooms() {
         const cars = await this.roomModel.find().exec();

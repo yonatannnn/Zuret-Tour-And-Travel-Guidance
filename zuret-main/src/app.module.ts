@@ -18,11 +18,12 @@ import { CarsModule } from './cars/cars.module';
 import { HotelModule } from './hotel/hotel.module';
 import { RoomsModule } from './hotel-rooms/rooms.module';
 import { SeatsModule } from './restaurantSeat/seats.module';
+import { ExpenseModule } from './expense/expense.module';
 
 @Module({
   imports: [UserDataModule,AuthModule, UsersModule,ConfigModule.forRoot(),
     MongooseModule.forRoot(config.mongoURi ),
-    UserDataModule, CarOrgModule, CarsModule, HotelModule, RoomsModule, RestaurantModule,SeatsModule],
+    UserDataModule, CarOrgModule, CarsModule, HotelModule, RoomsModule, RestaurantModule,SeatsModule , ExpenseModule],
   controllers: [AppController],
   providers: [AppService],
 })

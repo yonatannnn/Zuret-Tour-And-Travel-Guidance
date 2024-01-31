@@ -20,12 +20,12 @@ export class SeatsService {
     });
     const result = await newSeat.save();
     console.log(localSeats)
-    return result.companyId;
+    return result;
   }
 
   async getOneSeat(id: string){
     const result = await this.findProduct(id);
-    return result.companyId;
+    return result;
   }
   
   async getAllSeats(){

@@ -22,13 +22,14 @@ const cars_module_1 = require("./cars/cars.module");
 const hotel_module_1 = require("./hotel/hotel.module");
 const rooms_module_1 = require("./hotel-rooms/rooms.module");
 const seats_module_1 = require("./restaurantSeat/seats.module");
+const expense_module_1 = require("./expense/expense.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [user_data_module_1.UserDataModule, auth_module_1.AuthModule, users_module_1.UsersModule, config_1.ConfigModule.forRoot(),
             mongoose_1.MongooseModule.forRoot(mongo_keys_1.default.mongoURi),
-            user_data_module_1.UserDataModule, car_org_module_1.CarOrgModule, cars_module_1.CarsModule, hotel_module_1.HotelModule, rooms_module_1.RoomsModule, restaurant_module_1.RestaurantModule, seats_module_1.SeatsModule],
+            user_data_module_1.UserDataModule, car_org_module_1.CarOrgModule, cars_module_1.CarsModule, hotel_module_1.HotelModule, rooms_module_1.RoomsModule, restaurant_module_1.RestaurantModule, seats_module_1.SeatsModule, expense_module_1.ExpenseModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

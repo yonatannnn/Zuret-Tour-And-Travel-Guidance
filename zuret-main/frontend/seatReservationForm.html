@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="overlay">
+        <div class="popup">
+        <h2>Popup Form</h2>
+        <form>
+            <div>
+                <label>Enter your full name:</label>
+                <input type="text" id="name" placeholder="Enter Your Full Name">
+            </div>
+            <div>
+                <label>Enter your email:</label>
+                <input type="text" id="email" placeholder="Enter Your email">
+            </div>
+            <div> 
+            <label>Choose table:</label>
+                <select id="style">
+                <option value="couple">Table for couple</option>
+                <option value="group">Table for Group</option>
+                <option value="single">Single Table</option>
+            </select></div>
+                
+                <div>
+                  <label>Choose Date and Time:</label>
+                  <div>
+                    <input id="date" type="date">
+                  <select id="time" name="style">
+                    <option value="1:00AM">1:00AM</option>
+                    <option value="2:00AM">2:00AM</option>
+                    <option value="3:00AM">3:00AM</option>
+                    <option value="4:00AM">4:00AM</option>
+                    <option value="5:00AM">5:00AM</option>
+                    <option value="6:00AM">6:00AM</option>
+                    <option value="8:00PM">8:00PM</option>
+                    <option value="9:00PM">9:00PM</option>
+                    <option value="10:00PM">10:00PM</option>
+                    <option value="11:00PM">11:00PM</option>
+                    <option value="12:00PM">12:00PM</option>
+                    <option value="1:00PM">1:00PM</option>
+                    </select>
+                  </div>
+                  
+                </div>
+                
+        </form>
+        <a href="./pay.html"><button type="submit" onclick="reserve(localStorage.getItem('currentCompIdForRent'))">Go to Payment >></button></a>
+        <button onclick="reserve(localStorage.getItem('currentCompIdForRent'))">Reserve</button>
+    </div>
+    <script src="./javascript/restaurants-feature/restaurants_page.js"></script>
+    <script>
+        window.onload = function(){
+            fetchSeat(localStorage.getItem('currentCompIdForRent'));
+        };
+    </script>
+</body>
+</html>

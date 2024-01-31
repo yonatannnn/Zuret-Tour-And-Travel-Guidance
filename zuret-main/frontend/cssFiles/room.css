@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     justify-content: center;
 
+
 }
 footer{
     margin-top: 100vh;
@@ -10,7 +11,6 @@ footer{
 .card{
     box-shadow: 0 0 5px black;
     padding: 30px;
-    
     width:30vw;
     height: 110vh;
     margin-bottom: 20vh;
@@ -59,9 +59,9 @@ footer{
     border-radius: 10px;
 }
 
-.book{
+/* .book{
     background-color: rgb(0, 112, 0);
-    border: none;
+    
     font-size: 25px;
     color: white;
     margin: 2px 25%;
@@ -72,5 +72,9 @@ footer{
 .book:hover{
     background-color: antiquewhite;
     color: black;
-}
+} */
 
+
+.more-link i{
+    color: black
+  }

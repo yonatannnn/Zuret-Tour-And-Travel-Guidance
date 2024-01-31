@@ -4,7 +4,7 @@ const addHotel = () => {
     const name = document.getElementById('name');
     const location = document.getElementById('location')
     const imagePath = document.getElementById('imagePath')
-    const starStat= document.getElementById('starStat')
+    const starStat = document.getElementById('starStat')
     console.log(name.value , location.value , imagePath.value, starStat.value)
 
     
@@ -57,38 +57,32 @@ const getRooms = () => {
     return response.json();
   })
   .then(data => {
-    
     data.forEach(org => {
     var eachCard = `
-  
-  <div class="hotel-card">
-                <div class="hotel-image-container">
-                    <img src="${org.imagePath}" alt="">
-                </div>
-                <div class="hotel-info">
-                    <div class="hotel-name">
-                        <h2>${org.name}</h2>
-                        <div class="rate">
-                        
-                        <span>${org.starStat} Stars</span>
-                      
-                        </div>
-                        <div class="location">
-                            <img src="images/location-dot-solid.svg"><p>${org.location}</p>
-                        </div>
-                            <button class="more-link more" data-id="${org.id}" onclick="saveHotelId(event)">
-                            <a href="room.html">More... ></a>
-                          </button>                        
-                        
-                    </div>
-                </div>
+   
+    <div class="hotel-card">
+    <div class="hotel-image-container">
+        <img src="${org.imagePath}" alt="">
+    </div>
+    <div class="hotel-info">
+        <div class="hotel-name">
+            <h2>${org.name}</h2>
+            <div class="rate">
+            
+            <span>${org.starStat} Stars</span>
+          
             </div>
-  
-  
-  
-  
-  
-  `
+            <div class="location">
+                <img src="images/location-dot-solid.svg"><p>${org.location}</p>
+            </div>
+                <button class="more-link more" data-id="${org.id}" onclick="saveHotelId(event)">
+                <a href="room.html">More... ></a>
+              </button>                        
+            
+        </div>
+    </div>
+</div>
+`
 
   template += eachCard    
     });
@@ -103,6 +97,37 @@ const getRooms = () => {
 }
 
 
+function fetchRoom(id) {
+  const nameContainer = document.querySelector('#roomname');
+  const requestOptions = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+   fetch('http://localhost:3000/rooms/' + id, requestOptions)
+   .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    nameContainer.innerHTML = data.brand;
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+  });
+}
+
+
+function bookRoom() {
+
+}
+
+
+
+
 function loadHotel() {
     const container = document.querySelector('#orgContainer')
     var template = ''
@@ -112,6 +137,8 @@ function loadHotel() {
             'Content-Type': 'application/json'
         }
       };
+
+
 
 
     fetch(apiUrl, requestOptions)
@@ -127,7 +154,7 @@ function loadHotel() {
     <div class="orgCard">
         <h2>${org.name}</h2>
         <button onclick="buttonOnList(event)" data-id="${org.id}">
-    <a href="addRoom.html">Add Room</a>
+    <a href="AddCar.html">Add Room</a>
 </button>
     </div>
     </div>`
@@ -164,6 +191,7 @@ function addRoomToThis(companyId){
         roomType : roomType.value,
         imagePath : imagePath.value,
         price : price.value,
+      
         companyId : companyId
     };
     const requestOptions = {
@@ -197,13 +225,22 @@ const saveHotelId = (event) => {
   console.log("Clicked button with id:", id);
 }
 
-const saveHotelIdForRent = (event) => {
+
+const saveRoomIdForBook = (event) => {
   alert('in');
   const id = event.currentTarget.getAttribute("data-id");
   localStorage.setItem('currentCompIdForRent' , id)
   console.log("Clicked button with id:", id);
+  window.location.href = 'roomBookingForm.html';
 }
 
+function printForm(){
+  const carData = fetchCar(localStorage.getItem('currentCompIdForRent'));
+  console.log(carData);
+  console.log(carData.brand);
+
+
+}
 
 function LoadHotelRoom() {
   console.log('in');
@@ -229,10 +266,8 @@ function LoadHotelRoom() {
     })
     .then(data => {
   data.forEach(room => {
-    console.log(room._id)
     if (room.companyId == localId){
-      var eachCard = `
-      <div class="card"> 
+      var eachCard = ` <div class="card"> 
       <div class="add">
           <h1> Add to favorite</h1>
          <svg id="heart" width="30px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -283,11 +318,13 @@ function LoadHotelRoom() {
     <div class="price_box">
       <h2 class="price"> Price: </h2>
       <h2> ${room.price} ETB </h2>
+
   </div>
-  <div class="book_box"> 
-     <button class="more-link" data-id="${room._id}"> Book Room </button>
-  </div>
- </div>`
+    <div class="more-link">
+      <button class="more-link" data-id="${room._id}" onclick="saveRoomIdForBook(event)">Book Room</button>
+    </div>
+  
+ </div> `
       template += eachCard    
     }
    
@@ -297,6 +334,87 @@ function LoadHotelRoom() {
     .catch(error => {
     console.error('Fetch error:', error);
     });
+
+}
+
+function bookRoom(){
+  const url = 'http://localhost:3000/rooms/65b8f42001ebddc6ac405b91';
+
+fetch(url, {
+    method: 'PATCH',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+})
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('PATCH request succeeded with JSON response', data);
+    })
+    .catch(error => {
+        console.error('Error during PATCH request:', error);
+    });
+
+}
+
+function book(id){
+  const requestOptions = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+   fetch('http://localhost:3000/rooms/' + id, requestOptions)
+   .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+        postRoomForBook(data.price , localStorage.getItem('currentEmail') , data._id , 'rooms');
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+  });
+}
+
+
+
+function postRoomForBook(price , email , id , reason){
+  
+  const postData = {
+      prodId : id,
+      price : price,
+      userId : email,
+      reason : reason
+  };
+  const requestOptions = {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+body: JSON.stringify(postData)
+};
+
+  fetch('http://localhost:3000/expenses', requestOptions)
+  .then(response => {
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  return response.json();
+})
+.then(data => {
+  console.log('Response data:', data);
+})
+.catch(error => {
+  console.error('Fetch error:', error);
+});
+
 
 }
 

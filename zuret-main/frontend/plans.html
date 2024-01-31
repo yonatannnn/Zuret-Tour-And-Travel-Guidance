@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zuret</title>
     <link rel="stylesheet" href="cssFiles/styles.css">
+    <link rel="stylesheet" href="cssFiles/plan.css">
     
 </head>
 <body>
@@ -58,7 +59,6 @@
             </div>  
         </nav>
     </header>
-    <button onclick="getPlans(localStorage.getItem('currentEmail'))">click</button>
 
     <div id="PlanContainer">
         
@@ -135,5 +135,10 @@
        </footer>
        <script src="javascript/user-feature/js.js"></script>
        <script src="../frontend/javascript/user-feature/plans.js"></script>
+       <script>
+            window.onload= function(){
+                getPlans(localStorage.getItem('currentEmail'))
+            }
+       </script>
 </body>
 </html>

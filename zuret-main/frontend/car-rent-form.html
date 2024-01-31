@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./cssFiles/car-rent-form.css">
+    <link rel="stylesheet" href="./cssFiles/styles.css">
+</head>
+<body>
+    
+    <div class="Rent">
+        <h1>Car Rental Form</h1>
+        <img id="touristimg" src="./images/R.jpg" alt="">
+        <form id="car-rental-form">
+            <p id="carname"></p>
+            <p>Name:<input type="text" placeholder="Leo" name="First Name"required></p>
+            <p>
+                Pick Date: <input type="date" name="Exp_Date" id="Start_Date" required>
+            </p>
+            <p>
+                Return Date: <input type="date" name="Exp_Date" id="Exp_Date" required>
+            </p>
+        </form>
+        <a href="./pay.html"><button type="submit" onclick="rent(localStorage.getItem('currentCompIdForRent'))">Go to Payment >></button></a>
+        <button onclick="rent(localStorage.getItem('currentCompIdForRent'))">click</button>
+    </div>
+    <script src="./javascript/car-form.js"></script>
+    <script src="./javascript/car-rental/car-rental.js">
+    </script>
+    <script>
+        window.onload = function(){
+            fetchCar(localStorage.getItem('currentCompIdForRent'));
+        };
+    </script>
+</body>
+</html>

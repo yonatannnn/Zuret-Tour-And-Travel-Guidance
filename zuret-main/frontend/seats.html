@@ -1,11 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuret</title>
-    <link rel="stylesheet" href="cssFiles/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zuret Tour and Travel Guidance</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="cssFiles/styles.css">
+<style>
+    .search-bar {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; 
+    padding: 20px;
+    border-radius: 40%;
     
+    
+    
+    }
+    
+    .search-bar input {
+    padding: 10px;
+    border: none;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px; 
+    border: 1px solid #ccc;
+    border-radius: 20px 20px 20px 20px;   
+    font-size: 18px;  
+    
+    }
+    
+    .search-bar button {
+    background-color: transparent;
+    border: none;
+    margin-left: -40px;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(98, 95, 95);
+    }
+    .cards-common{
+  width: 100%;
+  height: 40%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.card1{
+  background-image: url(images/car1.jpg);
+}
+.card2{
+  background-image: url(images/car2.jpg);
+}
+.card3{
+  background-image: url(images/car3.jpg);
+}
+.card4{
+  background-image: url(images/car4.jpg);
+}
+.card5{
+  background-image: url(images/car3.jpg);
+}
+.card6{
+  background-image: url(images/car6.jpg);
+}
+
+
+.card-container { 
+display: flex; 
+flex-wrap: wrap; 
+justify-content:space-between;
+width: 84%;
+height: 380px;
+margin: 0% 2% 5% 10%;
+font-size: small;
+}
+
+.card-txt { 
+background: white; 
+padding: 10px; 
+width: 100%;
+border-bottom-right-radius: 6px;
+border-bottom-left-radius: 6px;
+box-sizing: border-box; 
+}
+.card-txt .check i{
+  color: rgb(18, 187, 18);
+  padding-bottom: 10px;
+  
+}
+.card-txt span{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.cards{
+  width: 30%;
+}
+.details{
+  display: flex;
+  margin: 5% 4% 0 4% ;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.lock{
+  background-color: rgb(131, 186, 143);
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  border-radius: 5px;
+  width: 30%;
+  margin-top: 4px;
+}
+.favorite{
+  color: rgb(234, 152, 122);
+  margin-top: 4px;
+}
+.check{
+  display: flex;
+  
+}
+.title{
+  font-weight: bolder;
+}
+.check .title{
+  margin-right: 8px;
+}
+.tospace{
+  margin-top: 25px;
+  margin-bottom: 40px;
+  font-size: x-small;
+}
+.search{
+  margin-left: 8px;
+}
+.details .pinkish{
+  color: rgb(222, 57, 126);
+}
+.more-link i{
+  color: black
+}
+
+body{
+background-color: rgb(253, 247, 223);
+font-family: Arial, sans-serif;
+
+}
+
+</style>
 </head>
 <body>
     <header>
@@ -28,47 +177,45 @@
                  
             </div>  
             <div class="nav-menu hide"> 
-                <div class="nav-box"> 
-                    <a href="home.html" id="spotlight">Discover</a> 
+                <div class="nav-box opened"> 
+                    <a href="discover.html">Discover</a> 
                 </div> 
                 <div class="nav-box"> 
-                    <a href="about.html">About</a> 
+                    <a id="about-anchor" href="about.html">About</a> 
+                </div> 
+                <div class="nav-box dropdown"> 
+                    <button class="dropbtn" id="spotlight">Car Rentals</button> 
+                    <div class="dropdown-content">
+                            <a id="dropdown-anchor" href="hotels.html">Hotels</a>
+                            <a id="dropdown-anchor"  href="restaurants.html">Restaurants</a>
+                            <a id="dropdown-anchor"  href="carRental.html">Rental Cars</a>
+                    </div>
                 </div> 
                 <div class="nav-box"> 
-                    <a href="login_page.html">Login</a> 
+                    <a href="plans.html">Trip Plans</a> 
                 </div> 
                 <div class="nav-box"> 
-                    <a href="sign-up_page.html">Signup</a> 
+                    <a href="expense.html">Expense</a> 
                 </div> 
                 <div class="nav-box dropdown"> 
                     <button class="dropbtn">Settings</button> 
                     <div class="dropdown-content">
-                            <!-- <a id="dropdown-anchor"  href="#">Profile</a> -->
+                            <a id="dropdown-anchor"  href="profile.html">Profile</a>
                             <a id="dropdown-anchor"  href="support.html">Support</a>
                     </div>
                 </div> 
             </div>  
         </nav>
     </header>
-    <div class="landing_container">
-        <div class="circle" id="circle1"></div>
-        <div class="circle" id="circle2"></div>
-        <div class="home-container">
-            <div class="title">
-                <h1>Looking for Places to visit in Ethiopia</h1>
-                <h3>Zuret got you covered with everything from place <br> 
-                    suggestions to hotel room reservation and the like. <br>
-                    </h3>
-                
-                    
-                    <button class="search-button" ><a href="login_page.html">Get Started</a></button>
-                           </div>
-        </div>
-            <div class="landing_img" id="church_img">
-                <img src="images/landing.jpg" alt="Ethiopian Church Forests" class="church">
-            </div>
-    </div>
-    <footer>
+    
+    <div class="search-bar">
+        <input type="text" id='searchInput' placeholder="Enter a Car type..." />
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </div>
+  <div class="card-container" id="carsss">
+ 
+  </div> 
+     <footer>
         <div class="multiple">
             <div class="contact">
                 <h4> Contact Us </h4>
@@ -122,6 +269,14 @@
         </div> 
         <p class="footer-p"> &#9400;Copyright | JAN 2024 G.C | Published By Zurets </p>
        </footer>
-       <script src="javascript/user-feature/js.js"></script>
+
+ 
+
 </body>
+<script>
+    window.onload = function(){
+      LoadRestaurantSeat();
+    }
+  </script>
+  <script src="../frontend/javascript/restaurants-feature/restaurants_page.js"></script>
 </html>
