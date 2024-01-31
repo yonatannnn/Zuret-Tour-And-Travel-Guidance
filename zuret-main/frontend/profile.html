@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zuret</title>
     <link rel="stylesheet" href="cssFiles/styles.css">
+    <link rel="stylesheet" href="cssFiles/profile.css">
 
     <style>
         .profile-anchor{
@@ -67,8 +68,9 @@
             </div>  
         </nav>
     </header>
-    <div class="">
-
+    <button onclick="setProfileData()">click</button>
+    <div class="profile-container">
+    
     </div>
     <footer>
         <div class="multiple">
@@ -125,5 +127,10 @@
         <p class="footer-p"> &#9400;Copyright | JAN 2024 G.C | Published By Zurets </p>
        </footer>
        <script src="javascript/user-feature/js.js"></script>
+       <script src="javascript/user-feature/profile.js">
+        window.onload = function(){
+            setProfileData();
+        }
+       </script>
 </body>
 </html>

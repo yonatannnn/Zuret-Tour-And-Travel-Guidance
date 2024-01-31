@@ -5,7 +5,8 @@ const error = document.getElementById('error')
 
 
 login_submit.addEventListener('click', function(e){
-
+    console.log(email.value)
+    console.log(password.value) 
     let value = []
 
     e.preventDefault()
@@ -49,9 +50,7 @@ login_submit.addEventListener('click', function(e){
      }
 
      else{
-
-          
-        
+        localStorage.setItem(`currentEmail`, email.value);
         fetch( "http://localhost:3000/users/login", {
         method: 'post',
         headers: {
@@ -59,10 +58,8 @@ login_submit.addEventListener('click', function(e){
             'Content-Type': 'application/json'
         },
         body: JSON.stringify( {
-
             "email": email.value,
             "password": password.value,
-
         } )
     } ).then( res => res.json() )
         .then( res => {
@@ -74,6 +71,7 @@ login_submit.addEventListener('click', function(e){
             }
             else{
             throw new Error('The user Already Exists')}
+            localStorage.setItem(`currentEmail`, email.value);
             
         } ).catch((erro) => {
             

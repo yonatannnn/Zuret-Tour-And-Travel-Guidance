@@ -11,18 +11,18 @@ import { UserDataService } from './user-data/user-data.service';
 import { UserDataModule } from './user-data/user-data.module';
 import { ConfigModule } from '@nestjs/config';
 import { HotelsModule } from './hotels/hotels.module';
-import { RestaurantsModule } from './restaurants/restaurants.module';
-import { BookingModule } from './restaurantReservation/booking.module';
+import { RestaurantModule } from './restaurants/restaurant.module';
 import config from './config/mongo.keys'
 import { CarOrgModule } from './car-org/car-org.module';
 import { CarsModule } from './cars/cars.module';
+import { HotelModule } from './hotel/hotel.module';
+import { RoomsModule } from './hotel-rooms/rooms.module';
+import { SeatsModule } from './restaurantSeat/seats.module';
 
 @Module({
   imports: [UserDataModule,AuthModule, UsersModule,ConfigModule.forRoot(),
     MongooseModule.forRoot(config.mongoURi ),
-    UserDataModule,
-    HotelsModule,
-    RestaurantsModule,BookingModule, CarOrgModule, CarsModule],
+    UserDataModule, CarOrgModule, CarsModule, HotelModule, RoomsModule, RestaurantModule,SeatsModule],
   controllers: [AppController],
   providers: [AppService],
 })

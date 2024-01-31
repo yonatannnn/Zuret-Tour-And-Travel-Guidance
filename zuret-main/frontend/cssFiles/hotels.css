@@ -112,6 +112,11 @@
     align-items: center;
     justify-content: center;
   }
+  .card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   
   .hotel-card{
     height: 350px;
@@ -277,4 +282,7 @@
     color: #c59b08;
   }
   
-  
+  .location{
+    display: flex;
+    justify-content: space-between;
+  }

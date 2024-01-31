@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hotels</title>
     <link rel="stylesheet" href="cssFiles/styles.css">
     <link rel="stylesheet" href="cssFiles/hotels.css">
+
+    <script src="javascript/user-feature/js.js"></script>
+    <style>
+        #services-anchor{
+            font-size: 22px;
+            background-color: #FEF7E0;
+            border-radius: 40px;
+            padding: 15px;
+            color: #584202;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -35,7 +46,7 @@
                     <a id="about-anchor" href="about.html">About</a> 
                 </div> 
                 <div class="nav-box dropdown"> 
-                    <button class="dropbtn" id="spotlight">Hotels</button> 
+                    <button class="dropbtn" id="spotlight">Car Rentals</button> 
                     <div class="dropdown-content">
                             <a id="dropdown-anchor" href="hotels.html">Hotels</a>
                             <a id="dropdown-anchor"  href="restaurants.html">Restaurants</a>
@@ -53,207 +64,24 @@
                     <div class="dropdown-content">
                             <a id="dropdown-anchor"  href="profile.html">Profile</a>
                             <a id="dropdown-anchor"  href="support.html">Support</a>
+                            <a id="dropdown-anchor"  href="home.html">LogOut</a>
                     </div>
                 </div> 
             </div>  
         </nav>
     </header>
-    <main id="hotels-page-main">
+    
+    <div class="search-bar">
+      <input type="text" id='searchInput' placeholder="Enter a Car Rental Company..." />
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
 
-        <!-- <div class="search-container">
-            <input type="text" id="search-input" placeholder="Hotel name...">
-            <button id="search-button">
-                <img src="images/magnifying-glass-solid.svg" alt="Search">
-            </button>
-        </div> -->
-        <div class="search-bar">
-            <input type="text" placeholder="Search for a hotel..." />
-            <button type="submit"><i class="fa fa-search"></i></button>  </div>
-        <div class="hotels-container">
-            <div class="hotel-card">
-                <div class="hotel-image-container">
-                    <img src="images/sheraton.jpg" alt="">
-                </div>
-                <div class="hotel-info">
-                    <div class="hotel-name">
-                        <h2>Sheraton Addis Hotel</h2>
-                        <div class="rate">
-                            <input type="radio" id="star5" name="rate" value="5" />
-                            <label for="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="rate" value="4" />
-                            <label for="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="rate" value="3" />
-                            <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rate" value="2" />
-                            <label for="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="rate" value="1" />
-                            <label for="star1" title="text">1 star</label>
-                        </div>
-                        <div class="price">
-                            <p>Price : price_variable</p>
-                        <button class="more">more <img src="images/chevron-right-solid.svg" alt="" id="next-icon"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hotel-card">
-                <div class="hotel-image-container">
-                    <img src="images/sheraton.jpg" alt="">
-                </div>
-                <div class="hotel-info">
-                    <div class="hotel-name">
-                        <h2>Blue Nile</h2>
-                        <div class="rate">
-                            <input type="radio" id="star5" name="rate" value="5" />
-                            <label for="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="rate" value="4" />
-                            <label for="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="rate" value="3" />
-                            <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rate" value="2" />
-                            <label for="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="rate" value="1" />
-                            <label for="star1" title="text">1 star</label>
-                        </div>
-                        <div class="price">
-                            <p>Price : price_variable</p>
-                        <button class="more">more <img src="images/chevron-right-solid.svg" alt="" id="next-icon"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hotel-card">
-                <div class="hotel-image-container">
-                    <img src="images/sheraton.jpg" alt="">
-                </div>
-                <div class="hotel-info">
-                    <div class="hotel-name">
-                        <h2>Sheraton Addis Hotel</h2>
-                        <div class="rate">
-                            <input type="radio" id="star5" name="rate" value="5" />
-                            <label for="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="rate" value="4" />
-                            <label for="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="rate" value="3" />
-                            <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rate" value="2" />
-                            <label for="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="rate" value="1" />
-                            <label for="star1" title="text">1 star</label>
-                        </div>
-                        <div class="price">
-                            <p>Price : price_variable</p>
-                        <button class="more">more <img src="images/chevron-right-solid.svg" alt="" id="next-icon"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hotel-card">
-                <div class="hotel-image-container">
-                    <img src="images/sheraton.jpg" alt="">
-                </div>
-                <div class="hotel-info">
-                    <div class="hotel-name">
-                        <h2>Sheraton Addis Hotel</h2>
-                        <div class="rate">
-                            <input type="radio" id="star5" name="rate" value="5" />
-                            <label for="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="rate" value="4" />
-                            <label for="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="rate" value="3" />
-                            <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rate" value="2" />
-                            <label for="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="rate" value="1" />
-                            <label for="star1" title="text">1 star</label>
-                        </div>
-                        <div class="price">
-                            <p>Price : price_variable</p>
-                        <button class="more">more <img src="images/chevron-right-solid.svg" alt="" id="next-icon"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hotel-card">
-                <div class="hotel-image-container">
-                    <img src="images/sheraton.jpg" alt="">
-                </div>
-                <div class="hotel-info">
-                    <div class="hotel-name">
-                        <h2>Sheraton Addis Hotel</h2>
-                        <div class="rate">
-                            <input type="radio" id="star5" name="rate" value="5" />
-                            <label for="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="rate" value="4" />
-                            <label for="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="rate" value="3" />
-                            <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rate" value="2" />
-                            <label for="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="rate" value="1" />
-                            <label for="star1" title="text">1 star</label>
-                        </div>
-                        <div class="price">
-                            <p>Price : price_variable</p>
-                        <button class="more">more <img src="images/chevron-right-solid.svg" alt="" id="next-icon"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hotel-card">
-                <div class="hotel-image-container">
-                    <img src="images/sheraton.jpg" alt="">
-                </div>
-                <div class="hotel-info">
-                    <div class="hotel-name">
-                        <h2>Sheraton Addis Hotel</h2>
-                        <div class="rate">
-                            <input type="radio" id="star5" name="rate" value="5" />
-                            <label for="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="rate" value="4" />
-                            <label for="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="rate" value="3" />
-                            <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rate" value="2" />
-                            <label for="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="rate" value="1" />
-                            <label for="star1" title="text">1 star</label>
-                        </div>
-                        <div class="price">
-                            <p>Price : price_variable</p>
-                        <button class="more">more <img src="images/chevron-right-solid.svg" alt="" id="next-icon"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hotel-card">
-                <div class="hotel-image-container">
-                    <img src="images/sheraton.jpg" alt="">
-                </div>
-                <div class="hotel-info">
-                    <div class="hotel-name">
-                        <h2>Sheraton Addis Hotel</h2>
-                        <div class="rate">
-                            <input type="radio" id="star5" name="rate" value="5" />
-                            <label for="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="rate" value="4" />
-                            <label for="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="rate" value="3" />
-                            <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rate" value="2" />
-                            <label for="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="rate" value="1" />
-                            <label for="star1" title="text">1 star</label>
-                        </div>
-                        <div class="price">
-                            <p>Price : price_variable</p>
-                        <button class="more">more <img src="images/chevron-right-solid.svg" alt="" id="next-icon"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+      <div class="card-container">
+        
+       
+        
+      </div>
+      
     <footer>
         <div class="multiple">
             <div class="contact">
@@ -308,28 +136,43 @@
         </div> 
         <p class="footer-p"> &#9400;Copyright | JAN 2024 G.C | Published By Zurets </p>
        </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const searchBar = document.querySelector(".search-bar input");
-          const cards = document.querySelectorAll(".hotel-name");
-      
-          searchBar.addEventListener("input", function () {
-            const searchTerm = searchBar.value.toLowerCase();
-      
-            cards.forEach((card) => {
-              const cardTitle = card.querySelector("h2").innerText.toLowerCase();
-      
-              if (cardTitle.includes(searchTerm)) {
-                card.classList.remove("hide");
-                card.classList.add("full-width", "expanded");
-              } else {
-                card.classList.add("hide");
-                card.classList.remove("full-width", "expanded");
-              }
-            });
-          });
-        })
- </script>
-    <script src="javascript/user-feature/js.js"></script>
+       <script src="javascript/user-feature/js.js"></script>
+       <script src="javascript/hotels-feature/manage-hotels.js"></script>
+     
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchBar = document.querySelector(".search-bar input");
+      const cards = document.querySelectorAll(".card-container .card");
+  
+      searchBar.addEventListener("input", function () {
+        const searchTerm = searchBar.value.toLowerCase();
+  
+        cards.forEach((card) => {
+          const cardTitle = card.querySelector("h2").innerText.toLowerCase();
+  
+          if (cardTitle.includes(searchTerm)) {
+            card.classList.remove("hide");
+            card.classList.add("full-width", "expanded");
+          } else {
+            card.classList.add("hide");
+            card.classList.remove("full-width", "expanded");
+          }
+        });
+      });
+      cards.forEach((card) => {
+        const moreLink = card.querySelector(".more-link a");
+  
+        moreLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          const clickedCard = event.target.closest(".card");
+          clickedCard.classList.toggle("expanded");
+        });
+      });
+    });
+
+    window.onload = function(){
+      getRooms();
+    }
+  </script>
 </body>
 </html>

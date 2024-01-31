@@ -1,0 +1,76 @@
+.card-container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+footer{
+    margin-top: 100vh;
+}
+.card{
+    box-shadow: 0 0 5px black;
+    padding: 30px;
+    
+    width:30vw;
+    height: 110vh;
+    margin-bottom: 20vh;
+    background-color: white;
+}
+.add{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px ;
+}
+.stars{
+    display: flex;
+    justify-content: center;
+}
+.location{
+    display: flex;
+}
+
+.room_pic{
+    margin-left: 10px;
+}
+
+.sound{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.features{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.price_box{
+    display: flex;
+    margin: 2px 25%;
+    align-items: center;
+    gap: 10px;
+}
+
+.price{
+    background-color: rgb(255, 212, 212);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.book{
+    background-color: rgb(0, 112, 0);
+    border: none;
+    font-size: 25px;
+    color: white;
+    margin: 2px 25%;
+    padding: 4px 25px;
+    border-radius: 20px;
+}
+
+.book:hover{
+    background-color: antiquewhite;
+    color: black;
+}
+

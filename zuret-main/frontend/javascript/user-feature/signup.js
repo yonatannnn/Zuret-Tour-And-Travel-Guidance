@@ -55,7 +55,24 @@ submit_button.addEventListener('click', function(e){
      }
 
      else{
+        if (localStorage.getItem(`infoSet`) == null){
+            var infoSet = {}
+            localStorage.setItem(`infoSet`, JSON.stringify(infoSet));
+        }
 
+        const name = document.getElementById('fullname')
+        const country = document.getElementById('country')
+        const email = document.getElementById('email')
+        const bio = document.getElementById('bio')
+        const birthdate = document.getElementById('birthdate') 
+        const infos = JSON.parse(localStorage.getItem(`infoSet`))
+        infos[email.value] = {
+            bio: bio.value,
+            name: name.value,
+            country: country.value,
+            email: email.value,
+            birthdate: birthdate.value }
+        localStorage.setItem(`infoSet`, JSON.stringify(infos));
        
            const result = fetch( "http://localhost:3000/users/signup", {
         method: 'post',
@@ -69,8 +86,6 @@ submit_button.addEventListener('click', function(e){
             "password": password.value,
             "fullname":full_name.value,
             "country":country.value,
-            // "role":"user"
-
         } )
     } )
     .then( res => res.json() )

@@ -3,8 +3,8 @@ export declare const carOrgSchema: mongoose.Schema<any, mongoose.Model<any, any,
     name: string;
     location: string;
     average_price: number;
-    cars: any;
     imagePath: string;
+    cars: any;
     review?: any;
 }>;
 export interface carOrg extends mongoose.Document {
