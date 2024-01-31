@@ -7,18 +7,35 @@
             text-align: center;
             
         }
-
+        
+        .submit_button{
+            border: none;
+            padding: 20px;
+            margin: 15px;
+            font-size: 25px;
+            color: white;
+            background-color: green;
+            border-radius: 30px;
+        }
+        .input_box{
+            height: 30px;
+            border-color: #2dbcf0;
+            border-radius: 10px;
+            padding: 10px;
+        }
         form {
             
             max-width: 400px;
             margin: 0 auto;
         }
 
-        label,
-        input {
-          
+        label,input {
             display: block;
             margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .label{
+            font-size: 25px ;
         }
         .signup_form{
             color: black;
@@ -84,26 +101,26 @@
     <form id="create-account-form" class="signup_form">
         
         <label for="fullname" class="label">Full Name:</label>
-        <input type="text" id="fullname" name="fullname" minlength="2" maxlength="15" required>
+        <input placeholder="Please Enter Your Full Name" class="input_box" type="text" id="fullname" name="fullname" minlength="2" maxlength="15" required>
 
         <label for="Birthdate" class="label">Birthdate:</label>
-        <input type="date" id="birthdate" name="birthdate" required>
+        <input class="input_box" type="date" id="birthdate" name="birthdate" required>
 
         <label for="Bio" class="label">Bio:</label>
-        <input type="text" id="bio" name="bio" required>
+        <input placeholder="Please Enter Bio" class="input_box" type="text" id="bio" name="bio" required>
 
         <label for="email" class="label">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input placeholder="Please Enter Your Email address" class="input_box" type="email" id="email" name="email" required>
 
         <label for="country" class="label">Country:</label>
-        <input type="country" id="country" name="country" required>
+        <input class="input_box" placeholder="Please Enter Your Country" class="input_box" type="country" id="country" name="country" required>
 
         <label for="password" class="label">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <input placeholder="Please Enter Your Password" class="input_box" type="password" id="password" name="password" required>
 
 
         <div id="error"></div>
-        <button type="submit" id="submit">Create Account</button>
+        <button class="submit_button" type="submit" id="submit">Create Account</button>
 
     </form>
     <footer>

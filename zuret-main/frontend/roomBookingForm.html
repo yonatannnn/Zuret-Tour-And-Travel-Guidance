@@ -15,13 +15,13 @@
         <form id="room-booking form">
             <p id="roomname">Double Room</p>
             <p>
-                Name:<input type="text" placeholder="Leo" name="First Name"required>
+                Name:<input type="text" placeholder="Leo" name="Full Name" id="name" required>
             </p>
             <p>
-                Checkin Date: <input type="date" name="Exp_Date" id="Exp_Date" required>
+                Checkin Date: <input type="date" name="Exp_Date" id="in_Date" required>
             </p>
             <p>
-                Checkout Date: <input type="date" name="Exp_Date" id="Exp_Date" required>
+                Checkout Date: <input type="date" name="Exp_Date" id="out_Date" required>
             </p>
             <p> Room Type: 
                 <select name="Card_Type" id="Card_Type" required>
@@ -38,8 +38,7 @@
                 </select>   
             </p>
         </form>
-        <a href="./pay.html"><button type="submit" onclick="book(localStorage.getItem('currentCompIdForRent'))">Go to Payment >></button></a>
-        <button onclick="book(localStorage.getItem('currentCompIdForRent'))">click</button>
+        <a href="./bookPay.html"><button type="submit" onclick="book(localStorage.getItem('currentCompIdForRent'))">Go to Payment >></button></a>
     </div>
     <script src="./javascript/hotels-feature/manage-hotels.js"></script>
     <script>

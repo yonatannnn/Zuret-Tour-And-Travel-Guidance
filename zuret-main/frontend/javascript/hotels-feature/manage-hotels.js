@@ -502,3 +502,40 @@ template += eachCard
   console.error('Fetch error:', error);
 });
 }}
+
+// const submit_button=document.getElementById("book");
+// submit_button.addEventListener('click', function(e) {
+//   const name=document.getElementById("name");
+//   const checkIn=document.getElementById("in-Date");
+//   const checkOut=document.getElementById("out-Date");
+//   const roomType=document.getElementById("Card_Type")
+//   let errors = [];
+
+//   e.preventDefault();
+// if(name.value.length<=2 || name.value.length>=15){
+//     errors.push('⚠️fill all fields');
+// }
+//   if (!checkIn.value || !checkOut.value) {
+//     errors.push('⚠️Enter correct format date');
+//   }
+
+//   if (!name.value) {
+//     errors.push('⚠️Please enter name');
+//   }
+
+//   if (!roomType.value) {
+//     errors.push('⚠️room type is required');
+//   }
+  
+//   if (errors.length==4){
+//     error.innerText = `⚠️fill all fields`
+//     error.style.display = 'block'
+//   }
+//   else if(errors.length > 0) {
+//     error.innerText = errors.join('\n');
+//     error.style.display = 'block';
+//   } 
+//   else{
+//     window.location.href="pay.html"
+//   }
+// })

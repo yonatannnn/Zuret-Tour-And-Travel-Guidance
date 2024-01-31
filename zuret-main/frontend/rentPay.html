@@ -36,7 +36,7 @@
                     <a href="about.html">About</a> 
                 </div> 
                 <div class="nav-box dropdown"> 
-                    <button class="dropbtn" id="spotlight">Restaurants</button> 
+                    <button class="dropbtn">Car Rentals</button> 
                     <div class="dropdown-content">
                             <a id="dropdown-anchor" href="hotels.html">Hotels</a>
                             <a id="dropdown-anchor"  href="restaurants.html">Restaurants</a>
@@ -64,8 +64,8 @@
             <h1>Payment form</h1>
             
             <h2>Contact Information</h2>
-            <p>First Name: *<input type="text" placeholder="Leo" name="First Name"required></p>
-            <p>Last Name: <input type="text" placeholder="Messi" name="Last Name"></p>
+            <p>First Name: *<input type="text" placeholder="Leo" name="First Name" id="firstName"required></p>
+            <p>Last Name: <input type="text" placeholder="Messi" name="Last Name" id="lastName"></p>
             <p>Email: * <input type="email" placeholder="abc@gmail.com" name="email" id="email"required></p>
             
                 
@@ -74,7 +74,7 @@
             
             <h2>Payment Information</h2> 
             <p> Card Type: *
-                <select name="Card_Type" id="Card_Type" required>
+                <select name="Card_Type" id="Card_type" required>
                     <option class="scroll" value="">--Select Your Card Type--</option>
                     <option class="scroll" value="Master Card">MasterCard</option>
                     <option class="scroll" value="VISA ">VISA</option>
@@ -82,7 +82,7 @@
                 </select>   
             </p>
             <p>
-                Card number: *<input type="number" placeholder="1111-2222-3333-4444" name="Card number" id="Card number"required>
+                Card number: *<input type="number" placeholder="1111-2222-3333-4444" name="Card number" id="Card_number"required>
             </p>
             <p>
                 CVV: *<input type="password" placeholder="123" name="CVV " id="CVV" required>
@@ -90,13 +90,17 @@
             <p>
                 Expiration Date: *<input type="date" name="Exp_Date" id="Exp_Date" required>
             </p>
-            <input type="button" value="Pay Now" onclick="submitForm()">
+            
+            <input type="button" value="Pay Now" onclick="rent(localStorage.getItem('currentCompIdForRent'))" id="submit">
 
           </form>
           <div id="linksContainer">
             <!-- Links will be inserted here -->
         </div>
         </div>
-      <script src="./javascript/pay.js"></script>
+      <script src="./javascript/user-feature/pay.js"></script>
+      <script src="./javascript/car-rental/car-rental.js"></script>
+
+
 </body>
 </html>
