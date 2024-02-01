@@ -65,13 +65,7 @@ const getCars = () => {
       <i class="fa fa-map-marker"></i>
       <span>${org.location}</span>
     </div>
-    <div class="details">
-        <span>Average price:</span>${org.average_price} ETB
-      </div>
-    <div class="details">
-      <span>Available Cars:</span>
-      <a href="rider-view-list.html id = ${org.id}">View List</a>
-    </div>
+    
     <h3>Reviews</h3>
     <div class="reviews">
       <div class="review">

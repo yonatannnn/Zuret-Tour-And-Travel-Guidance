@@ -20,7 +20,7 @@ export class CarOrgController {
     @Body('imagePath') imagePath: string,
   ) {
         const generatedId = await this.carOrgService.addCarOrg(name , location , imagePath);
-        return { id : generatedId };
+        return { id : generatedId, message :"car company added successfully" };
   }
 
   @Get()

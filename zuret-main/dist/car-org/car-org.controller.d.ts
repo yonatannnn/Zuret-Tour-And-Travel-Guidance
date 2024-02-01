@@ -4,6 +4,7 @@ export declare class CarOrgController {
     constructor(carOrgService: CarOrgService);
     addCarOrg(name: string, location: string, imagePath: string): Promise<{
         id: any;
+        message: string;
     }>;
     getAllcarOrg(): Promise<{
         id: any;

@@ -159,34 +159,33 @@ button:hover {
              
         </div>  
         <div class="nav-menu hide"> 
-            <div class="nav-box opened"> 
-                <a href="discover.html">Discover</a> 
-            </div> 
-            <div class="nav-box"> 
-                <a id="about-anchor" href="about.html">About</a> 
-            </div> 
             <div class="nav-box dropdown"> 
-                <button class="dropbtn" id="spotlight">Car Rentals</button> 
+                <button class="dropbtn" id="spotlight">Hotel</button> 
                 <div class="dropdown-content">
-                        <a id="dropdown-anchor" href="hotels.html">Hotels</a>
-                        <a id="dropdown-anchor"  href="restaurants.html">Restaurants</a>
-                        <a id="dropdown-anchor"  href="carRental.html">Rental Cars</a>
+                    <a href="addHotel.html">Add Hotel</a>
+                    <a href="listOfHotels(Admin).html">Add Room</a>
                 </div>
             </div> 
-            <div class="nav-box"> 
-                <a href="plans.html">Trip Plans</a> 
-            </div> 
-            <div class="nav-box"> 
-                <a href="expense.html">Expense</a> 
-            </div> 
             <div class="nav-box dropdown"> 
-                <button class="dropbtn">Settings</button> 
+                <button class="dropbtn" id="spotlight">Car Rental</button> 
                 <div class="dropdown-content">
-                        <a id="dropdown-anchor"  href="profile.html">Profile</a>
-                        <a id="dropdown-anchor"  href="support.html">Support</a>
-                        <a id="dropdown-anchor"  href="home.html">LogOut</a>
+                    <a href="carRentAdmin.html">Add Car Rental Company</a>
+            <a href="carOrgs.html">Add Car</a>
                 </div>
-            </div> 
+            </div>
+            <div class="nav-box dropdown"> 
+                <button class="dropbtn" id="spotlight">Restaurant</button> 
+                <div class="dropdown-content">
+                    <a href="addRestaurant.html">Add Restaurant</a>
+                    <a href="listOfRestaurants(admin).html">Add Seat</a>
+                </div>
+            </div>
+            <div class="nav-box dropdown"> 
+                <button class="dropbtn" id="spotlight">Tourist Site</button> 
+                <div class="dropdown-content">
+                    <a href="addTouristSite.html">Add Tourist site</a>
+                </div>
+            </div>
         </div>  
     </nav>
 </header>
@@ -206,7 +205,7 @@ button:hover {
     <p>Image path:</p>
     <input type="text" id="imagePath" name="imagePath" required>
     <p>Star Status:</p>
-    <input type="number" id="starStat" name="starStat" required>
+    <input type="number" id="starStat" name="starStat" min="1" max="5" required>
     <button onclick="addHotel()">Add</button>
 
     </div>

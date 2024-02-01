@@ -21,7 +21,7 @@ let HotelController = class HotelController {
     }
     async addHotel(name, location, imagePath, starStat) {
         const generatedId = await this.hotelService.addHotel(name, location, imagePath, starStat);
-        return { id: generatedId };
+        return { id: generatedId, message: "Hotel successfully added" };
     }
     async getAllhotel() {
         const hotels = await this.hotelService.getHotels();

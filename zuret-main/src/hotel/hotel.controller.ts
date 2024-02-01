@@ -21,7 +21,7 @@ export class HotelController {
     @Body('starStat') starStat: number,
   ) {
         const generatedId = await this.hotelService.addHotel(name , location , imagePath, starStat);
-        return { id : generatedId };
+        return { id : generatedId, message:"Hotel successfully added" };
   }
 
   @Get()

@@ -76,7 +76,7 @@ function getTotalExpense(userId) {
                 }
             });
             Promise.all(fetchPromises).then(() => {
-                tPrice.innerHTML = `<p class="price">Total Price : ${total} ETB</p>`;
+                tPrice.innerHTML = `<p class="price">Total Expected Expense : ${total} ETB</p>`;
                 console.log(total);
                 plan.innerHTML = template;
             });

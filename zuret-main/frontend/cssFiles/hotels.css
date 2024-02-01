@@ -176,15 +176,20 @@
     width: 80%;
   }
   
-  .hotel-info , .restaurant-info{
+  .hotel-info , .hotel-info{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     text-align: start;
     row-gap: 0;
   }
-  
+  .hotel-info, .hotel-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  }
+ 
   .hotel-name , .restaurant-name{
     height: fit-content;
     padding-top: 0px;
@@ -223,6 +228,10 @@
     align-items: center;
     justify-self: end;
     align-self: flex-end;
+    
+  }
+  .more-link p{
+    text-decoration: none;
   }
   
   .reserve-botton{
@@ -284,5 +293,5 @@
   
   .location{
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
   }

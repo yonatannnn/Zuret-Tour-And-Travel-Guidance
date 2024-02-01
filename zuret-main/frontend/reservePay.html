@@ -91,9 +91,10 @@
                 Expiration Date: *<input type="date" name="Exp_Date" id="Exp_Date" required>
             </p>
             
-            <input type="button" value="Pay Now" onclick="reserve(localStorage.getItem('currentCompIdForRent'))" id="submit">
 
           </form>
+          <input type="button" value="Pay Now" onclick="reserve(localStorage.getItem('currentCompIdForRent'))" id="submit">
+<div id="error"></div>
           <div id="linksContainer">
             <!-- Links will be inserted here -->
         </div>

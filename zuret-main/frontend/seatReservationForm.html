@@ -3,22 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Table Reservation Form</title>
+    <link rel="stylesheet" href="./cssFiles/styles.css">
+    <style>
+        .form{
+            display: flex;
+            flex-direction: column;
+            color: black;
+            position: absolute;
+            left:40%;
+            top:30%;
+            background-color: white;
+        }
+        label{
+            color:black;
+        }
+        .overlay h2{
+            text-align: center;
+        }
+        .field{
+            display: flex;
+            justify-content: spa;
+        }
+        
+
+    </style>
 </head>
+<body>
 <body>
     <div class="overlay">
         <div class="popup">
-        <h2>Popup Form</h2>
-        <form>
-            <div>
+       
+        <form class="form">
+            <h2>Table reservation form</h2>
+            <div class="field">
                 <label>Enter your full name:</label>
                 <input type="text" id="name" placeholder="Enter Your Full Name">
             </div>
-            <div>
+            <div class="field">
                 <label>Enter your email:</label>
                 <input type="text" id="email" placeholder="Enter Your email">
             </div>
-            <div> 
+            <div class="field"> 
             <label>Choose table:</label>
                 <select id="style">
                 <option value="couple">Table for couple</option>
@@ -48,15 +74,17 @@
                   
                 </div>
                 
-        </form>
-        <a href="./reservePay.html"><button type="submit">Go to Payment >></button></a>
-        <button onclick="reserve(localStorage.getItem('currentCompIdForRent'))">Reserve</button>
+        
+            </form>
+            <a href="./reservePay.html"><button type="submit">Go to Payment >></button></a>
+
     </div>
     <script src="./javascript/restaurants-feature/restaurants_page.js"></script>
     <script>
         window.onload = function(){
-            fetchSeat(localStorage.getItem('currentCompIdForRent'));
+            fetchRestaurantSeat(localStorage.getItem('currentCompIdForRent'));
         };
+       
     </script>
 </body>
 </html>

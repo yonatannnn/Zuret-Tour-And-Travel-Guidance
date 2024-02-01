@@ -12,6 +12,7 @@ export declare class HotelService {
         rooms: object;
         review: object;
         imagePath: string;
+        starStat: number;
     }[]>;
     getSingleHotel(hotelId: string): Promise<{
         id: string;

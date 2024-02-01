@@ -4,6 +4,7 @@ export declare class HotelController {
     constructor(hotelService: HotelService);
     addHotel(name: string, location: string, imagePath: string, starStat: number): Promise<{
         id: any;
+        message: string;
     }>;
     getAllhotel(): Promise<{
         id: any;
@@ -13,6 +14,7 @@ export declare class HotelController {
         rooms: object;
         review: object;
         imagePath: string;
+        starStat: number;
     }[]>;
     getHotel(roId: string): Promise<{
         id: string;

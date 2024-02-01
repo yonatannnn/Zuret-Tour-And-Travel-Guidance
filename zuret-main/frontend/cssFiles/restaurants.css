@@ -106,23 +106,33 @@
     width: 80%;
   }
   
-  .hotel-info , .restaurant-info{
+  .restaurant-card , .restaurant-info{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: start;
-    row-gap: 0;
+    row-gap: 2rem;
   }
   
-  .hotel-name , .restaurant-name{
+  .restaurant-info , .restaurant-name{
     height: fit-content;
-    padding-top: 0px;
+    padding-top: 5px;
     display: flex;
     flex-direction: column;
   }
+
+  .restaurant-info , .more-link{
+    background-color: grey;
+    border-style: outset;
+
+  }
+
+  .restaurant-name h2{
+      font-size: 2rem;
+  }
   
-  .hotel-name > h2  , .restaurant-name > h2{
+  .hotel-name > h2  , .resta  urant-name > h2{
     margin: 0;
   }
   
@@ -215,50 +225,7 @@
   
 
 
-
-  /* overlay */
-  .container {
-    text-align: center;
-    margin-top: 200px;
-  }
-  label{
-    color:#000000;
-  }
-  
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-  }
-  
-  .popup {
-    background-color: white;
-    width: 300px;
-    padding: 20px;
-    margin: 100px auto;
-  }
-  
-  .popup h2 {
-    text-align: center;
-  }
-  
-  .popup form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .popup input {
-    margin-bottom: 10px;
-  }
-  
-  .popup button {
-    margin-top: 10px;
-  }
-  
-  .popup button#closeForm {
-    margin-top: 20px;
+  .more-link a{
+    text-decoration:none;
+    color:black;
   }

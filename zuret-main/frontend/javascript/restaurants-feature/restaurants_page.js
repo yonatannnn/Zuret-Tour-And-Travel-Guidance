@@ -58,9 +58,7 @@ const getSeats = () => {
     data.forEach(org => {
     var eachCard = `
           <div class="restaurant-card">
-              <div class="favourite-icon" onclick="changeFavoriteIcon()">
-                  <img src="images/heart-regular (1).svg" alt="" class="heart-icon" id="favorite-icon">
-              </div>
+              
               <div class="restaurant-image-container">
                   <img src="${org.imagePath}" alt="meskot restaurant">
               </div>
@@ -374,9 +372,7 @@ const search = () => {
   filteredData.forEach(org => {
     var eachCard  =  `
         <div class="restaurant-card">
-            <div class="favourite-icon" onclick="changeFavoriteIcon()">
-                <img src="images/heart-regular (1).svg" alt="" class="heart-icon" id="favorite-icon">
-            </div>
+            
             <div class="restaurant-image-container">
                 <img src="${org.imagePath}" alt="meskot restaurant">
             </div>

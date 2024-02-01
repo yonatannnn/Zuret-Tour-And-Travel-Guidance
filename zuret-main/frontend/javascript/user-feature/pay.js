@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 const error = document.getElementById('error');
 const submit_button = document.getElementById('submit');
 const full_name = document.getElementById('fullname');
@@ -48,4 +49,5 @@ if(full_name.value.length<=2 || full_name.value.length>=15){
     error.innerText = errors.join('\n');
     error.style.display = 'block';
   } else {}
+})
 })

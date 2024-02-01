@@ -21,7 +21,7 @@ let CarOrgController = class CarOrgController {
     }
     async addCarOrg(name, location, imagePath) {
         const generatedId = await this.carOrgService.addCarOrg(name, location, imagePath);
-        return { id: generatedId };
+        return { id: generatedId, message: "car company added successfully" };
     }
     async getAllcarOrg() {
         const carOrgs = await this.carOrgService.getCarOrgs();

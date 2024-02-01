@@ -34,7 +34,8 @@ export class HotelService {
           average_price : co.average_price,
           rooms : co.rooms,
           review : co.review,
-          imagePath : co.imagePath
+          imagePath : co.imagePath,
+          starStat: co.starStat
         }));
     }
 
